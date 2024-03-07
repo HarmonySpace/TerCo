@@ -32,7 +32,7 @@
      inkscape:window-x="73"
      inkscape:window-y="28"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g17">
+     inkscape:current-layer="layer1">
     <inkscape:page
        x="0"
        y="0"
@@ -48,7 +48,8 @@
        height="71.226326"
        id="page16"
        margin="0"
-       bleed="0" />
+       bleed="0"
+       inkscape:label="banner1" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -115,35 +116,36 @@
   <g
      inkscape:label="main"
      inkscape:groupmode="layer"
-     id="g1" />
-  <g
-     inkscape:label="mojito"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="opacity:1;fill:#222222;fill-opacity:1;stroke-width:1.78533"
-       id="rect1"
-       width="228.40092"
-       height="71.226326"
-       x="522.58746"
-       y="0"
-       ry="0" />
+     id="g1">
     <g
-       id="g2"
-       inkscape:label="logo"
-       transform="matrix(1.0171346,0,0,1.0171346,528.9482,22.214001)" />
-    <g
+       inkscape:label="banner1"
        inkscape:groupmode="layer"
-       id="g17"
-       inkscape:label="logo">
-      <path
-         style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:url(#linearGradient3);fill-rule:evenodd;stroke-width:2676.28"
-         d="m 638.2016,52.459435 0.94247,-6.866543 h 33.65954 l -0.94247,6.866543 z"
-         id="path16" />
-      <path
-         style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:#ffffff;fill-rule:evenodd;stroke-width:2676.28"
-         d="m 600.7722,52.459435 1.34638,-9.290031 24.57146,-8.549521 -22.21529,-8.61684 1.34638,-9.35735 32.38047,13.261856 -1.27906,9.35735 z"
-         id="path17" />
+       id="layer1">
+      <rect
+         style="opacity:1;fill:#222222;fill-opacity:1;stroke-width:1.78533"
+         id="rect1"
+         width="228.40092"
+         height="71.226326"
+         x="522.58746"
+         y="0"
+         ry="0" />
+      <g
+         id="g2"
+         inkscape:label="logo"
+         transform="matrix(1.0171346,0,0,1.0171346,528.9482,22.214001)" />
+      <g
+         inkscape:groupmode="layer"
+         id="g17"
+         inkscape:label="logo">
+        <path
+           style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:url(#linearGradient3);fill-rule:evenodd;stroke-width:2676.28"
+           d="m 638.2016,52.459435 0.94247,-6.866543 h 33.65954 l -0.94247,6.866543 z"
+           id="path16" />
+        <path
+           style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:#ffffff;fill-rule:evenodd;stroke-width:2676.28"
+           d="m 600.7722,52.459435 1.34638,-9.290031 24.57146,-8.549521 -22.21529,-8.61684 1.34638,-9.35735 32.38047,13.261856 -1.27906,9.35735 z"
+           id="path17" />
+      </g>
     </g>
   </g>
 </svg>
