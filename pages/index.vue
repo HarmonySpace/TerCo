@@ -205,7 +205,7 @@
     align-items: center;
   }
   .nav__logo {
-    height: 3rem;
+    height: 3rem
     display: flex;
     justify-content: start;
     
