@@ -190,9 +190,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color: #eeeeee;
   }
   .limiter {
-    width: 80%;
+    padding: 3rem;
+    width: 90%;
     display: flex;
     justify-content: center;
   }
@@ -202,9 +204,25 @@
     justify-content: space-between;
     align-items: center;
   }
-  .logo {
-    width: 100%;
-     
+  .nav__logo {
+    height: 3rem;
+    display: flex;
+    justify-content: start;
+    
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .nav__links {
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+  }
+  .nav__link {
+    text-decoration: none;
+    color: #222222;
+    font-size: 1.5rem;
   }
 
 </style>
