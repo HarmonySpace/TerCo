@@ -205,9 +205,9 @@
     align-items: center;
   }
   .nav__logo {
-    height: 3rem
+    height: 2rem;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     
     & svg {
       width: 100%;
@@ -217,7 +217,7 @@
   .nav__links {
     display: flex;
     gap: 2rem;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .nav__link {
     text-decoration: none;
