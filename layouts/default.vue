@@ -23,6 +23,7 @@
   :root {
     --bg: #eeeeee;
     --fr: #222222;
+    --bs: #4bb1ff35;
   }
 
   * {
@@ -35,7 +36,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #eeeeee;
+    background-color: var(--bg);
   }
   .limiter {
     padding: 3rem;
