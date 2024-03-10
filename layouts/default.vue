@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main class="w-full flex justify-center">
     <section class="limiter">
       <slot />
     </section>

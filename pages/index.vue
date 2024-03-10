@@ -1,9 +1,7 @@
 <template>
   <navBar></navBar>
   <section class="nColors">
-    <ButtonsButtonText text="4 Colores" />
-    <ButtonsButtonText text="6 Colores" />
-    <ButtonsButtonText text="10 Colores" />
+    
   </section>
 </template>
 
