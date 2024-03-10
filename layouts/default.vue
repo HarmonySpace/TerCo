@@ -20,6 +20,11 @@
     font-display: swap;
   }
 
+  :root {
+    --bg: #eeeeee;
+    --fr: #222222;
+  }
+
   * {
     margin: 0;
     padding: 0;
