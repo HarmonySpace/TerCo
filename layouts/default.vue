@@ -23,7 +23,7 @@
   :root {
     --bg: #eeeeee;
     --fr: #222222;
-    --bs: #4bb1ff35;
+    --bs: #4bb1ff30;
   }
 
   * {

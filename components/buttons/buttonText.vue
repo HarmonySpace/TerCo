@@ -17,6 +17,6 @@ const props = defineProps(['text'])
 	font-size: 1.5rem;
 	background-color: var(--bg);
 	box-shadow: 1rem 1rem 2rem var(--bs);
-	border-radius: rem;
+	border-radius: 1rem;
 }
 </style>
