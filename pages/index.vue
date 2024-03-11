@@ -1,16 +1,6 @@
 <template>
-  <navBar></navBar>
-  <section class="nColors">
+  <navBar />
+  <section class="p-48 w-full flex justify-center gap-8">
     
   </section>
 </template>
-
-<style setup>
-.nColors {
-  padding-top: 10rem;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  gap: 2rem;
-}
-</style>

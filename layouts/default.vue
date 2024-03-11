@@ -1,6 +1,6 @@
 <template>
-  <main class="w-full flex justify-center">
-    <section class="limiter">
+  <main class="w-full flex justify-center bg-[var(--bg)]">
+    <section class="p-12 w-11/12 flex justify-center items-center flex-wrap">
       <slot />
     </section>
   </main>
@@ -22,7 +22,7 @@
 
   :root {
     --bg: #eeeeee;
-    --fr: #222222;
+    --fg: #222222;
     --bs: #4bb1ff30;
   }
 
@@ -30,20 +30,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Chivo;
-  }
-  .page {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--bg);
-  }
-  .limiter {
-    padding: 3rem;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    font-family: 'Chivo', monospace;
+    color: var(--fg);
   }
 </style>

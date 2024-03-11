@@ -1,7 +1,7 @@
 <template>
-  <nav class="nav">
-    <div class="nav__logo">
-      <svg width="285.74997mm" height="142.07379mm" viewBox="0 0 285.74997 142.07379" version="1.1" id="svg1"
+  <nav class="w-full flex justify-between items-center">
+    <div class="h-8 flex justify-start">
+      <svg class="w-full h-full" viewBox="0 0 285.74997 142.07379" version="1.1" id="svg1"
         inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="logo.svg" xml:space="preserve"
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -84,41 +84,9 @@
         <g inkscape:label="mojito" inkscape:groupmode="layer" id="g4" transform="translate(2.8556799e-6,1.857156e-5)" />
       </svg>
     </div>
-    <div class="nav__links">
-      <a class="nav__link" href="#">Github</a>
-      <a class="nav__link" href="#">Acerda de</a>
+    <div class="flex gap-8 justify-end">
+      <a class="no-underline text-blue-900 text-2xl" href="#">Github</a>
+      <a class="no-underlin text-blue-900 text-2xl" href="#">Acerda de</a>
     </div>
   </nav>
 </template>
-
-<style scoped>
-.nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__logo {
-  height: 2rem;
-  display: flex;
-  justify-content: flex-start;
-
-  & svg {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.nav__links {
-  display: flex;
-  gap: 2rem;
-  justify-content: flex-end;
-}
-
-.nav__link {
-  text-decoration: none;
-  color: #222222;
-  font-size: 1.5rem;
-}
-</style>
