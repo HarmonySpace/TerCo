@@ -21,6 +21,10 @@ export const useColorsStore = defineStore('colors', () => {
   const bgStyle = (colorId: number) => {
     const target = colors.value.find((color) => color.id === colorId)
     return target ? `background-color: #${target.value};` : 'background-color: #000000;'
-  } 
-  return {colors, bgStyle}
+  }
+  const changeColor = (colorId: number, newColor: string) => {
+    const target = colors.value.find((color) => color.id === colorId)
+    target ? target.value = newColor : target
+  }
+  return {colors, bgStyle, changeColor}
 })

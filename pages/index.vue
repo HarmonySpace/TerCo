@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const store = useColorsStore()
-const normal_class = 'text-blue-900 flex-none';
-const active_class = 'bg-blue-500 text-blue-100 flex-initial w-1/2';
+const normal_class = 'text-blue-900';
+const active_class = 'bg-blue-500 text-blue-100';
 const selected_button = ref(1)
 const buttons = [
   {
@@ -26,6 +26,9 @@ const buttons = [
 const selectButton = (id: number) => {
   selected_button.value = id
 }
+const updateColor = (id: number, color: string) => {
+  store.changeColor(id, color)
+}
 </script>
 
 <template>
@@ -38,7 +41,7 @@ const selectButton = (id: number) => {
     </div>
     <section class="flex w-full justify-between items-center gap-12">
       <div class="flex flex-auto w-1/3 flex-wrap gap-8">
-        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full" />
+        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full" @getValue="(value) => updateColor(color.id, value)" />
       </div>
       <div class="flex flex-auto w-2/3 h-full rounded-3xl overflow-hidden shadow-blue-200 shadow-2xl">
         <div v-for="color in store.colors" class="flex flex-auto h-full w-full transition-all duration-300 ease-out" :style="store.bgStyle(color.id)">
