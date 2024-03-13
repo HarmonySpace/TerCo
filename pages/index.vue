@@ -1,19 +1,22 @@
 <script setup lang="ts">
-const normalClass = 'text-blue-900';
-const activeClass = 'bg-blue-500 text-blue-100';
-const selected_button = ref(0)
-const labels = [
+const normal_class = 'text-blue-900';
+const active_class = 'bg-blue-500 text-blue-100';
+const selected_button = ref(1)
+const buttons = [
   {
     id: 1,
-    text: "4 Colors"
+    text: "4 Colors",
+    disable: false
   },
   {
     id: 2,
-    text: "6 Colors"
+    text: "6 Colors",
+    disable: true
   },
   {
     id: 3,
-    text: "10 Colors"
+    text: "10 Colors",
+    disable: true
   }
 ]
 const selectButton = (id: number) => {
@@ -23,7 +26,12 @@ const selectButton = (id: number) => {
 
 <template>
   <NavbarsSimpleBar />
-  <section class="pt-48 w-full flex justify-start gap-8">
-    <ButtonsButtonText v-for="label in labels" :key="label.id" :text="label.text" :class="selected_button === label.id ? activeClass : normalClass" @click="selectButton(label.id)" />
+  <section class="pt-48 w-full flex justify-start gap-24">
+    <div class="flex flex-auto w3/6 justify-start gap-8 flex-wrap">
+      <ButtonsButtonText v-for="button in buttons" :key="button.id" :text="button.text"
+        :class="selected_button === button.id ? active_class : normal_class" @click="selectButton(button.id)"
+        :disabled="button.disable" />
+    </div>
   </section>
+
 </template>
