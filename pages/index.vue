@@ -38,7 +38,7 @@ const selectButton = (id: number) => {
     </div>
     <section class="flex w-full justify-between items-center gap-12">
       <div class="flex flex-auto w-1/3 flex-wrap gap-8">
-        <InputsSimpleImput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full" />
+        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full" />
       </div>
       <div class="flex flex-auto w-2/3 h-full rounded-3xl overflow-hidden shadow-blue-200 shadow-2xl">
         <div v-for="color in store.colors" class="flex flex-auto h-full w-full transition-all duration-300 ease-out" :style="store.bgStyle(color.id)">

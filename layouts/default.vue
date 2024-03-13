@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full flex justify-center bg-[var(--bg)]">
+  <main class="w-full flex justify-center bg-gray-200">
     <section class="p-12 w-11/12 flex justify-center items-center flex-wrap">
       <slot />
     </section>
