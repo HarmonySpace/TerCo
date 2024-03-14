@@ -1,3 +1,4 @@
+import { errorMessages } from "vue/compiler-sfc"
 
 export const useColorsStore = defineStore('colors', () => {
   const colors = ref([
@@ -24,7 +25,11 @@ export const useColorsStore = defineStore('colors', () => {
   }
   const changeColor = (colorId: number, newColor: string) => {
     const target = colors.value.find((color) => color.id === colorId)
-    target ? target.value = newColor : target
+    if (target) {
+      newColor !== '' ? target.value = newColor : target.value = '000000'
+    } else {
+      console.log("object not found")
+    }    
   }
   return {colors, bgStyle, changeColor}
 })
