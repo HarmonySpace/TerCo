@@ -3,12 +3,8 @@ const props = defineProps(['file_name'])
 </script>
 
 <template>
-	<section class="bg-gray-100 w-full overflow-hidden rounded-3xl">
-		<div class="p-4 px-8">
-			<p class="text-1xl font-bold">{{ props.file_name }}</p>
-		</div>
-		<hr class="border-gray-400 border-2">
-		<div class="px-8">
+	<section class="bg-blue-900 overflow-hidden rounded-3xl flex justify-center items-center shadow-2xl shadow-blue-200">
+		<div class="p-8 px-14">
 			<slot></slot>
 		</div>
 </section>

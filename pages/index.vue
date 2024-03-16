@@ -50,8 +50,8 @@ const updateColor = (id: number, color: string) => {
         </div>
       </div>
     </section>
-    <section class="flex w-full justify-center items-center flex-wrap pt-8">
-      <CodeSimpleCodeBlock file_name="alacritty.toml">
+    <section class="flex w-full justify-start items-center flex-wrap mt-8">
+      <CodeSimpleCodeBlock>
         <AlacrittySimpleTheme />
       </CodeSimpleCodeBlock>
     </section>
