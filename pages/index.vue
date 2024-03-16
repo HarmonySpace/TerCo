@@ -41,13 +41,19 @@ const updateColor = (id: number, color: string) => {
     </div>
     <section class="flex w-full justify-between items-center gap-12">
       <div class="flex flex-auto w-1/3 flex-wrap gap-8">
-        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full" @getValue="(value) => updateColor(color.id, value)" />
+        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full"
+          @getValue="(value) => updateColor(color.id, value)" />
       </div>
       <div class="flex flex-auto w-2/3 h-full rounded-3xl overflow-hidden shadow-blue-200 shadow-2xl">
-        <div v-for="color in store.colors" class="flex flex-auto h-full w-full transition-all duration-300 ease-out" :style="store.bgStyle(color.id)">
+        <div v-for="color in store.colors" class="flex flex-auto h-full w-full transition-all duration-300 ease-out"
+          :style="store.bgStyle(color.id)">
         </div>
       </div>
     </section>
+    <section class="flex w-full justify-center items-center flex-wrap pt-8">
+      <CodeSimpleCodeBlock file_name="alacritty.toml">
+        <AlacrittySimpleTheme />
+      </CodeSimpleCodeBlock>
+    </section>
   </section>
-
 </template>

@@ -1,5 +1,3 @@
-import { errorMessages } from "vue/compiler-sfc"
-
 export const useColorsStore = defineStore('colors', () => {
   const colors = ref([
     {
