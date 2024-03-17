@@ -40,8 +40,8 @@ const updateColor = (id: number, color: string) => {
         :disabled="button.disable" />
     </div>
     <section class="flex w-full justify-between items-center gap-12">
-      <div class="flex flex-auto w-1/3 flex-wrap gap-8">
-        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-full"
+      <div class="flex w-1/3 flex-wrap gap-8">
+        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-2/4 basis-52 grow "
           @getValue="(value) => updateColor(color.id, value)" />
       </div>
       <div class="flex flex-auto w-2/3 h-full rounded-3xl overflow-hidden shadow-blue-200 shadow-2xl">
@@ -50,7 +50,7 @@ const updateColor = (id: number, color: string) => {
         </div>
       </div>
     </section>
-    <section class="flex w-full justify-start items-center flex-wrap mt-8">
+    <section class="flex w-full justify-start items-center flex-wrap mt-24">
       <CodeSimpleCodeBlock>
         <AlacrittySimpleTheme />
       </CodeSimpleCodeBlock>
