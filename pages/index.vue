@@ -32,7 +32,6 @@ const updateColor = (id: number, color: string) => {
 </script>
 
 <template>
-  <NavbarsSimpleBar />
   <section class="pt-48 w-full flex flex-wrap justify-start gap-24">
     <div class="flex w-8/12 justify-start gap-8">
       <ButtonsButtonText v-for="button in buttons" :key="button.id" :text="button.text"
@@ -51,9 +50,9 @@ const updateColor = (id: number, color: string) => {
       </div>
     </section>
     <section class="flex w-full justify-start items-center flex-wrap mt-24">
-      <CodeSimpleCodeBlock>
+      <CodesSimpleCodeBlock>
         <AlacrittySimpleTheme />
-      </CodeSimpleCodeBlock>
+      </CodesSimpleCodeBlock>
     </section>
   </section>
 </template>

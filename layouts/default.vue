@@ -1,9 +1,20 @@
 <template>
-  <main class="w-full flex justify-center bg-gray-200">
-    <section class="p-12 w-11/12 flex justify-center items-center flex-wrap">
-      <slot />
+
+  <body class="w-full flex flex-col justify-center items-center bg-gray-200">
+    <section class="pt-12 w-9/12 flex flex-col">
+      <header class="w-full">
+        <NavbarsSimpleBar />
+      </header>
+      <main class="w-full flex justify-center ">
+        <section class="w-full flex justify-center items-center flex-wrap">
+          <slot />
+        </section>
+      </main>
     </section>
-  </main>
+    <footer>
+      <FootersSimpleFooter />
+    </footer>
+  </body>
 </template>
 
 <style>
