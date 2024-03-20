@@ -1,8 +1,43 @@
 <template>
 	<section id="footer1" class="bg-blue-900 p-20 mt-32 flex justify-between gap-20">
 		<section class="flex flex-col grow basis-1/3">
-			<h1 class="text-gray-200 text-6xl font-bold"> >_ TerCo</h1>
-			<p class="text-gray-300 text-2xl mt-4">Una web para crear temas sencillos de alacritty terminal</p>
+			<div class="flex w-full gap-12">
+				<svg class="w-24" viewBox="0 0 285.74997 142.07379" version="1.1" id="svg1" xml:space="preserve"
+					xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+					xmlns:svg="http://www.w3.org/2000/svg">
+					<defs id="defs1">
+						<linearGradient id="swatch4">
+							<stop style="stop-color:#eeeeee;stop-opacity:1;" offset="0" id="stop4" />
+						</linearGradient>
+						<linearGradient id="swatch1">
+							<stop style="stop-color:#eeeeee;stop-opacity:1;" offset="0" id="stop1" />
+						</linearGradient>
+						<linearGradient id="linearGradient2">
+							<stop style="stop-color:#eeeeee;stop-opacity:1;" offset="0" id="stop10" />
+							<stop style="stop-color:#eeeeee;stop-opacity:1;" offset="1" id="stop6" />
+						</linearGradient>
+						<linearGradient xlink:href="#linearGradient2" id="linearGradient17" gradientUnits="userSpaceOnUse"
+							gradientTransform="matrix(1.0171346,0,0,1.0171346,717.76655,409.4405)" x1="259.15222" y1="80.176987"
+							x2="330.69434" y2="95.191994" />
+						<linearGradient xlink:href="#swatch4" id="linearGradient4" x1="896.0141" y1="466.43585" x2="979.263"
+							y2="466.43585" gradientUnits="userSpaceOnUse" />
+					</defs>
+					<g id="g1" transform="translate(2.8556799e-6,1.857156e-5)">
+						<g id="layer3" transform="matrix(1.783604,0,0,1.783604,-1598.1343,-760.89996)">
+							<path
+								style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:url(#linearGradient17);fill-rule:evenodd;stroke-width:5952.48;"
+								d="m 979.26303,506.26357 2.09621,-15.27229 h 74.86416 l -2.0962,15.27229 z" id="path2" />
+							<path
+								style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:#eeeeee"
+								d="m 896.01408,506.26357 2.99456,-20.66251 54.65084,-19.01549 -49.41034,-19.16523 2.99457,-20.81223 72.01932,29.49647 -2.84484,20.81224 z"
+								id="text1" />
+						</g>
+					</g>
+				</svg>
+				<h1 class="text-gray-200 text-6xl font-bold">TerCo</h1>
+			</div>
+				<p class="text-gray-300 text-2xl mt-4">Una web para crear temas sencillos de alacritty terminal</p>
+
 		</section>
 		<section class="grow basis-1/3">
 			<h2 class="text-gray-200 text-3xl font-bold">Acerca de nosotros</h2>
