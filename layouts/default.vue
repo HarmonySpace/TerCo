@@ -11,10 +11,10 @@
         </section>
       </main>
     </section>
-    <footer>
-      <FootersSimpleFooter />
-    </footer>
   </body>
+  <footer>
+    <FootersSimpleFooter />
+  </footer>
 </template>
 
 <style>
@@ -44,5 +44,8 @@
   box-sizing: border-box;
   font-family: 'Chivo', monospace;
   color: var(--fg);
+}
+html {
+  scroll-behavior: smooth;
 }
 </style>

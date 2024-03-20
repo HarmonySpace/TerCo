@@ -86,7 +86,7 @@
     </div>
     <div class="flex gap-8 justify-end">
       <a class="no-underline text-blue-900 text-2xl hover:text-blue-600" href="https://github.com/HarmonySpace/TerCo/tree/main">Github</a>
-      <a class="no-underlin text-blue-900 text-2xl hover:text-blue-600" href="#">Acerda de</a>
+      <a class="no-underlin text-blue-900 text-2xl hover:text-blue-600" href="#footer1">Acerda de</a>
     </div>
   </nav>
 </template>
