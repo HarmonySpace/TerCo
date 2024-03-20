@@ -1,6 +1,6 @@
 <template>
   <nav class="w-full flex justify-between items-center">
-    <div class="h-8 flex justify-start">
+    <div class="h-8 flex justify-center items-center gap-8">
       <svg class="w-full h-full" viewBox="0 0 285.74997 142.07379" version="1.1" id="svg1"
         inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="logo.svg" xml:space="preserve"
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -83,10 +83,11 @@
         </g>
         <g inkscape:label="mojito" inkscape:groupmode="layer" id="g4" transform="translate(2.8556799e-6,1.857156e-5)" />
       </svg>
+      <h1 class="text-5xl font-bold text-blue-900 ">TerCo</h1>
     </div>
     <div class="flex gap-8 justify-end">
-      <a class="no-underline text-blue-900 text-2xl hover:text-blue-600" href="https://github.com/HarmonySpace/TerCo/tree/main">Github</a>
-      <a class="no-underlin text-blue-900 text-2xl hover:text-blue-600" href="#footer1">Acerda de</a>
+      <a class="no-underline text-gray-600 text-xl hover:text-blue-600" href="https://github.com/HarmonySpace/TerCo/tree/main">Github</a>
+      <a class="no-underlin text-gray-600 text-xl hover:text-blue-600" href="#footer1">Acerda de</a>
     </div>
   </nav>
 </template>

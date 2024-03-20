@@ -49,7 +49,7 @@
 		<section class="grow basis-1/3">
 			<h2 class="text-gray-200 text-3xl font-bold">Redes sociales</h2>
 			<div class="mt-4">
-				<a href="https://github.com/HarmonySpace/TerCo/tree/main">
+				<a href="https://github.com/HarmonySpace">
 					<svg class="fill-blue-500 w-12 duration-75 ease-out hover:scale-125 hover:fill-gray-200"
 						xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30">
 						<path
