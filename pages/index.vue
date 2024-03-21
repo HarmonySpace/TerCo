@@ -27,32 +27,35 @@ const selectButton = (id: number) => {
   selected_button.value = id
 }
 const updateColor = (id: number, color: string) => {
-  store.changeColor(id, color)
+  store.update(id, color)
 }
 </script>
 
 <template>
-  <section class="pt-48 w-full flex flex-wrap justify-start gap-24">
-    <div class="flex w-8/12 justify-start gap-8">
+  <section class="pt-20 w-full flex flex-wrap justify-between">
+    <div class="flex w-8/12 justify-start gap-2">
       <ButtonsButtonText v-for="button in buttons" :key="button.id" :text="button.text"
         :class="selected_button === button.id ? active_class : normal_class" @click="selectButton(button.id)"
         :disabled="button.disable" />
     </div>
-    <section class="flex w-full justify-between items-center gap-12">
-      <div class="flex w-1/3 flex-wrap gap-8">
-        <InputsSimpleInput v-for="color in store.colors" key="color.id" :placeholder="color.value" class="w-2/4 basis-52 grow "
-          @getValue="(value) => updateColor(color.id, value)" />
-      </div>
-      <div class="flex flex-auto w-2/3 h-full rounded-3xl overflow-hidden shadow-blue-200 shadow-2xl">
-        <div v-for="color in store.colors" class="flex flex-auto h-full w-full transition-all duration-300 ease-out"
-          :style="store.bgStyle(color.id)">
+    <section class="mt-8 flex w-full justify-between items-center gap-4">
+      <div class="flex flex-col gap-4 h-full justify-between grow basis-1/3">
+        <template v-for="color in store.colors" key="color.id">
+          <InputsSimpleInput :id='"inputColor" + color.id' :placeholder="color.value" @getValue="(value) => updateColor(color.id, value)" />
+        </template> 
+        <div class="w-full h-full bg-gray-300 rounded-3xl flex justify-start items-end overflow-hidden">
         </div>
       </div>
-    </section>
-    <section class="flex w-full justify-start items-center flex-wrap mt-24">
-      <CodesSimpleCodeBlock>
-        <AlacrittySimpleTheme />
-      </CodesSimpleCodeBlock>
+      <section class="flex flex-col h-full overflow-hidden rounded-3xl grow basis-1/3">
+        <div v-for="color in store.colors" class="flex flex-auto h-full w-ful"
+          :style="store.background(color.id)">
+        </div>
+      </section>
+      <section class="flex grow basis-1/3">
+        <CodesSimpleCodeBlock>
+          <AlacrittySimpleTheme />
+        </CodesSimpleCodeBlock>
+      </section>
     </section>
   </section>
 </template>

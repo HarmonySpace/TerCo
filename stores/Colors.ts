@@ -25,11 +25,11 @@ export const useColorsStore = defineStore('colors', () => {
       value: '13163F'
     }
   ])
-  const bgStyle = (colorId: number) => {
+  const background = (colorId: number) => {
     const target = colors.value.find((color) => color.id === colorId)
     return target ? `background-color: #${target.value};` : 'background-color: #000000;'
   }
-  const changeColor = (colorId: number, newColor: string) => {
+  const update = (colorId: number, newColor: string) => {
     const target = colors.value.find((color) => color.id === colorId)
     if (target) {
       newColor !== '' ? target.value = newColor : target.value = '000000'
@@ -37,5 +37,5 @@ export const useColorsStore = defineStore('colors', () => {
       console.log("object not found")
     }    
   }
-  return {colors, bgStyle, changeColor}
+  return {colors, background, update}
 })
