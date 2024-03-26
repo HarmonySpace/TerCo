@@ -2,27 +2,27 @@ export const useColorsStore = defineStore('colors', () => {
   const colors = ref([
     {
       id: 1,
-      value: '5356FF'
+      value: '82A8D9'
     },
     {
       id:2,
-      value: '378CE7'
+      value: '6F87A6'
     },
     {
       id: 3,
-      value: '67C6E3'
+      value: '3F5573'
     },
     {
       id: 4,
-      value: '87D6F3'
+      value: 'B2B1E6'
     },
     {
       id: 5,
-      value: 'DFF5FF'
+      value: 'BBCDF2'
     },
     {
       id: 6,
-      value: '13163F'
+      value: '222F40'
     }
   ])
   const background = (colorId: number) => {
