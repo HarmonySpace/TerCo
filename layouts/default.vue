@@ -1,20 +1,22 @@
+<script setup lang="ts">
+const menuActive = ref(false)
+</script>
+
 <template>
 
-  <body class="w-full flex flex-col justify-center items-center bg-gray-200">
-    <section class="pt-12 w-9/12 flex flex-col">
+  <body class="flex flex-wrap justify-center items-center w-full bg-mercury-200">
+    <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
-        <NavbarsSimpleBar />
+        <NavbarsSimpleBar @itsActive="() => { menuActive = !menuActive }" />
       </header>
-      <main class="w-full flex justify-center ">
-        <section class="w-full flex justify-center items-center flex-wrap">
+      <Transition name="main" :class="{ menuActiveClass: menuActive, menuInactiveClass: !menuActive }">
+        <main class="flex flex-wrap justify-center items-center w-full transition-all duration-150 ease-out">
           <slot />
-        </section>
-      </main>
+        </main>
+      </Transition>
     </section>
   </body>
-  <footer>
-    <FootersSimpleFooter />
-  </footer>
+  <FootersSimpleFooter />
 </template>
 
 <style>
@@ -45,7 +47,20 @@
   font-family: 'Chivo', monospace;
   color: var(--fg);
 }
+
 html {
   scroll-behavior: smooth;
+}
+</style>
+
+<style scoped>
+.menuActiveClass {
+  transform: translateY(5rem);
+  transition: all 0.5s ease-out;
+}
+
+.menuInactiveClass {
+  transform: translateY(0rem);
+  transition: all 0.5s ease-out;
 }
 </style>
