@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const menuActive = ref(false)
+
 </script>
 
 <template>
 
-  <body class="flex flex-wrap justify-center items-center w-full bg-mercury-200">
+  <body class="flex flex-wrap justify-center items-center w-full bg-mercury-200 dark:bg-shark-950">
     <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
         <NavbarsSimpleBar @itsActive="() => { menuActive = !menuActive }" />
@@ -34,18 +35,11 @@ const menuActive = ref(false)
   font-display: swap;
 }
 
-:root {
-  --bg: #eeeeee;
-  --fg: #222222;
-  --bs: #4bb1ff30;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Chivo', monospace;
-  color: var(--fg);
 }
 
 html {
