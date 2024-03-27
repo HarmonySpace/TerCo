@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{html,js}'],
+	darkMode: 'class',
 	theme: {
 		colors: {
 			"shark": {
@@ -33,6 +34,6 @@ module.exports = {
 		fontFamily: {
 			chivo: ['Chivo', 'monospace'],
 			bold: ['Chivo-Bold', 'monospace']
-		},
-	},
+		}
+	}
 }
