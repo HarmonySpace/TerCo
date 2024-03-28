@@ -4,7 +4,7 @@ const menuActive = ref(false)
 </script>
 
 <template>
-  <body class="flex flex-wrap justify-center items-center w-98dvw bg-mercury-200 dark:bg-shark-950">
+  <body class="flex flex-wrap justify-center items-center w-95dvw bg-mercury-200 dark:bg-shark-950">
     <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
         <NavbarsSimpleBar @itsActive="() => { menuActive = !menuActive }" />
@@ -40,19 +40,19 @@ const menuActive = ref(false)
   box-sizing: border-box;
   font-family: 'Chivo', monospace;
 }
+</style>
 
+<style scoped>
 html {
   scroll-behavior: smooth;
   scrollbar-width: 2rem;
-  width: 100%;
+  width: 100dvw;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-</style>
 
-<style scoped>
 .menuActiveClass {
   transform: translateY(5rem);
   transition: all 0.5s ease-out;
