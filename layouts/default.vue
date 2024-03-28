@@ -39,6 +39,7 @@ const menuActive = ref(false)
   padding: 0;
   box-sizing: border-box;
   font-family: 'Chivo', monospace;
+  text-wrap: wrap;
 }
 </style>
 

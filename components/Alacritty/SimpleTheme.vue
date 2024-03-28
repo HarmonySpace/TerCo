@@ -10,7 +10,7 @@ const store = useColorsStore()
 
 <template>
 <pre class="w-full">
-<code class="w-full text-wrap text-sm">
+<code class="w-full text-sm">
 <span class="head">[colors]</span>
 <span class="propiety">cursor</span><span class="char"> = { </span><span class="char">text</span><span class="char"> = </span><span class="value">"#{{ store.colors[5].value }}"</span><span class="char">, </span><span class="char">cursor</span><span class="char"> = </span><span class="value">"#{{ store.colors[0].value }}"</span><span class="char"> } </span>
 <span class="propiety">selection</span><span class="char"> = { </span><span class="char">text</span><span class="char"> = </span><span class="value">"#{{ store.colors[5].value }}"</span><span class="char">, </span><span class="char">cursor</span><span class="char"> = </span><span class="value">"#{{ store.colors[1].value }}"</span><span class="char"> } </span>
