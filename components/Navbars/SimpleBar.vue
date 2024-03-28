@@ -21,7 +21,7 @@ const showMenu = ref(false)
             class="text-shark-700 font-chivo underline decoration-solid relative bottom-0 sm:bottom-2 md:bottom-4">co</span>
         </h1>
       </div>
-      <section class="flex justify-end items-center gap-8">
+      <section class="flex justify-end items-center gap-4 sm:gap-8">
         <section class="flex justify-end items-center gap-8">
           <ButtonsToggleColorMode></ButtonsToggleColorMode>
           <ul class="hidden lg:flex grow gap-8">
@@ -33,7 +33,7 @@ const showMenu = ref(false)
           </ul>
         </section>
         <svg @click="showMenu = !showMenu; $emit('itsActive')" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 24 24" stroke-width="2" class="w-12 stroke-shark-900 dark:stroke-shark-500 lg:hidden transition-all duration-150 hover:cursor-pointer hover:scale-75" :class="{ 'rotate-90': showMenu }">
+          viewBox="0 0 24 24" stroke-width="2" class="w-8 sm:w-12 stroke-shark-900 dark:stroke-shark-500 lg:hidden transition-all duration-150 hover:cursor-pointer hover:scale-75" :class="{ 'rotate-90': showMenu }">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </section>
