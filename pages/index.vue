@@ -33,7 +33,7 @@ const updateColor = (id: number, color: string) => {
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
-    <div class="flex flex-wrap gap-2 w-full lg:w-1/2">
+    <div class="flex flex-wrap gap-2 w-full lg:w-2/3">
       <ButtonsButtonText class="grow basis-full md:basis-1/4" v-for="button in buttons" :key="button.id" :text="button.text"
         :class="selected_button === button.id ? active_class : normal_class" @click="selectButton(button.id)"
         :disabled="button.disable" />
