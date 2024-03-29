@@ -41,7 +41,7 @@ const updateColor = (id: number, color: string) => {
     <section class="mt-8 flex flex-wrap justify-between items-center gap-4 w-full">
       <section class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full">
         <InputsSimpleInput v-for="color in store.colors" key="color.id" :id='"inputColor" + color.id'
-          :placeholder="color.value" @getValue="(value) => updateColor(color.id, value)" />
+          :placeholder="color.placeholder" @getValue="(value) => updateColor(color.id, value)" />
           <div class="flex w-full h-full rounded-xl bg-mercury-300 dark:bg-shark-800"></div>
       </section>
       <section class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full">
