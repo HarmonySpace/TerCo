@@ -2,11 +2,13 @@
 const anchors = [
   {
     name: 'Github',
-    url: 'https://github.com/HarmonySpace/TerCo/tree/main'
+    url: 'https://github.com/HarmonySpace/TerCo/tree/main',
+    icon: ''
   },
   {
-    name: 'Acerca de',
-    url: '#footer1'
+    name: 'Buy me a coffee',
+    url: 'https://www.buymeacoffee.com/jchavaspacp',
+    icon: 'mdi:coffee-outline'
   }
 ]
 const showMenu = ref(false)
@@ -28,7 +30,9 @@ const showMenu = ref(false)
             <li
               class="grow text-mercury-500 dark:text-shark-500 text-start text-2xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200"
               v-for="anchor in anchors">
-              <a :href="anchor.url">{{ anchor.name }}</a>
+              
+              <a :href="anchor.url"><Icon :name="anchor.icon" /> {{ anchor.name }}</a>
+
             </li>
           </ul>
         </section>
@@ -43,7 +47,7 @@ const showMenu = ref(false)
         <h1 class="w-full text-shark-900 dark:text-shark-300 text-5xl font-bold pb-8">Menu</h1>
         <ul class="flex flex-col">
           <li
-            class="w-full text-mercury-500 dark:text-shark-500 text-start text-3xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200 hover:translate-x-4"
+            class="w-full text-mercury-500 dark:text-shark-500 text-start text-xl sm:text-3xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200 hover:translate-x-4"
             v-for="anchor in anchors">
             <a :href="anchor.url">{{ anchor.name }}</a>
           </li>
