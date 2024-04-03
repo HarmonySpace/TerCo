@@ -8,7 +8,7 @@ const anchors = [
   {
     name: 'Buy me a coffee',
     url: 'https://www.buymeacoffee.com/jchavaspacp',
-    icon: 'mdi:coffee-outline'
+    icon: ''
   }
 ]
 const showMenu = ref(false)
@@ -28,11 +28,9 @@ const showMenu = ref(false)
           <ButtonsToggleColorMode></ButtonsToggleColorMode>
           <ul class="hidden lg:flex grow gap-8">
             <li
-              class="grow text-mercury-500 dark:text-shark-500 text-start text-2xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200"
+              class="grow text-mercury-500 dark:text-shark-500 text-start text-xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200"
               v-for="anchor in anchors">
-              
               <a :href="anchor.url"><Icon :name="anchor.icon" /> {{ anchor.name }}</a>
-
             </li>
           </ul>
         </section>

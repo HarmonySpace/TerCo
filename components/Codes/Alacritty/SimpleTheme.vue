@@ -1,15 +1,16 @@
 <script setup lang="ts">
 const store = useColorsStore()
-
-/* const addHexColor = (c1: string, c2:string) => {
-  let hexStr = (parseInt(c1, 16) + parseInt(c2, 16)).toString(16);
-  while (hexStr.length < 6) { hexStr = '0' + hexStr; }
-  return hexStr;
-} */
+const copyThis = ref('')
+const { copy } = useClipboard({ source: copyThis })
+const copyCode = () => {
+  copyThis.value = store.getTheme()
+  copy(copyThis.value)
+}
 </script>
 
 <template>
-<pre class="w-full">
+  <ButtonsCopyButton class="absolute" @click="copyCode()"></ButtonsCopyButton>
+  <pre class="w-full">
 <code class="w-full text-sm">
 <span class="head">[colors]</span>
 <span class="propiety">cursor</span><span class="char"> = { </span><span class="char">text</span><span class="char"> = </span><span class="value">"#{{ store.colors[5].value }}"</span><span class="char">, </span><span class="char">cursor</span><span class="char"> = </span><span class="value">"#{{ store.colors[0].value }}"</span><span class="char"> } </span>
@@ -37,12 +38,15 @@ const store = useColorsStore()
 .head {
   @apply text-shark-700 dark:text-shark-500 font-bold;
 }
+
 .propiety {
   @apply text-shark-500 dark:text-shark-700 font-bold;
 }
+
 .char {
   @apply text-shark-500 dark:text-shark-500;
 }
+
 .value {
   @apply text-mercury-600 dark:text-shark-300;
 }
