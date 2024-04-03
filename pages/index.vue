@@ -47,12 +47,12 @@ const updateColor = (id: number, color: string) => {
       <section class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full">
         <div v-for="color in store.colors"
           class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-12"
-          :style="store.background(color.id)">
+          :style="store.getBackground(color.id)">
         </div>
       </section>
       <section class="flex justify-center items-center grow basis-full xl:basis-3/6 w-full">
         <CodesSimpleCodeBlock>
-          <AlacrittySimpleTheme />
+          <CodesAlacrittySimpleTheme />
         </CodesSimpleCodeBlock>
       </section>
     </section>
