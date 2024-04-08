@@ -9,8 +9,10 @@ const copyCode = () => {
 </script>
 
 <template>
-  <ButtonsCopyButton class="absolute" @click="copyCode()"></ButtonsCopyButton>
-  <pre class="w-full">
+
+  <div class="py-8">
+    <ButtonsCopyButton class="absolute" @click="copyCode()"></ButtonsCopyButton>
+<pre class="w-full">
 <code class="w-full text-sm">
 <span class="head">[colors]</span>
 <span class="propiety">cursor</span><span class="char"> = { </span><span class="char">text</span><span class="char"> = </span><span class="value">"#{{ store.colors[5].value }}"</span><span class="char">, </span><span class="char">cursor</span><span class="char"> = </span><span class="value">"#{{ store.colors[0].value }}"</span><span class="char"> } </span>
@@ -32,6 +34,9 @@ const copyCode = () => {
 <span class="propiety">white</span><span class="char"> = </span><span class="value">"#{{ restHex(store.colors[4].value, '222222') }}"</span>
 </code>
 </pre>
+
+  </div>
+
 </template>
 
 <style lang="postcss" scoped>
