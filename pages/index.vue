@@ -82,9 +82,11 @@ const updateColor = (id: number, color: string) => {
       <CodesSimpleCodeBlock class="my-8">
         <CodesHoToUseAddConfig></CodesHoToUseAddConfig>
       </CodesSimpleCodeBlock>
-      <h2 class="text-3xl font-bold text-shark-800 dark:text-shark-400 mt-12 w-full">4. Recomendaciones</h2>
-      <p class="text-xl text-mercury-600 dark:text-shark-600">Si el tema no se aplica, pueder cargar el archivo con el
-        comando <strong>source</strong> o reiniciar la terminal de alacritty</p>
+      <ListSimpleEnumList number="4">
+        <template v-slot:header>Recomendaciones</template>
+        <template v-slot:description>Si el tema no se aplica, pueder cargar el archivo con el
+        comando <strong>source</strong> o reiniciar la terminal de alacritty</template>
+      </ListSimpleEnumList>
     </section>
   </section>
 </template>
