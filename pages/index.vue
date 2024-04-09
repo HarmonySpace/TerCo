@@ -52,7 +52,7 @@ const copyColor = (color: string) => {
       </section>
       <section class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full">
         <div v-for="color in store.colors"
-          class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-12"
+          class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer"
           :style="store.getBackground(color.id)" @click="copyColor(color.value)">
         </div>
       </section>
