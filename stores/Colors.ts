@@ -31,6 +31,7 @@ export const useColorsStore = defineStore('colors', () => {
       placeholder: 'Fondo'
     }
   ])
+  const brightAdd = '111111'
 
   onMounted (() => {
     const colorsDefault = ['82A8D9', '6F87A6', '3F5573', 'B2B1E6', 'BBCDF2', '222F40']
@@ -43,7 +44,6 @@ export const useColorsStore = defineStore('colors', () => {
     }
     console.log(colorsLocal.value)
   })
-  const brightAdd = '111111'
   const update = (colorId: number, newColor: string) => {
     const target = colors.value.find((color) => color.id === colorId)
     if (target) {
