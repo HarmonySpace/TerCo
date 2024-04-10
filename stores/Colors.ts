@@ -38,39 +38,33 @@ export const useColorsStore = defineStore('colors', () => {
     return target ? `background-color: #${target.value};` : 'background-color: #000000;'
   }
   const getTheme = () => {
-    const color1 = colors.value[0]
-    const color2 = colors.value[1]
-    const color3 = colors.value[2]
-    const color4 = colors.value[3]
-    const color5 = colors.value[4]
-    const color6 = colors.value[5]
     const theme = '[colors]\n' +
-      'cursor = { text = "#' + color6.value + '", cursor = "#' + color1.value + '"}\n' +
-      'selection = { text = "#' + color6.value + '", cursor = "#' + color2.value + '"}\n' +
+      'cursor = { text = "#' + colors.value[5].value + '", cursor = "#' + colors.value[0].value + '"}\n' +
+      'selection = { text = "#' + colors.value[5].value + '", cursor = "#' + colors.value[1].value + '"}\n' +
       '[colors.primary]\n' +
-      'foreground = "#' + color5.value + '"\n' +
-      'background = "#' + color6.value + '"\n' +
+      'foreground = "#' + colors.value[4].value + '"\n' +
+      'background = "#' + colors.value[5].value + '"\n' +
       '[colors.search]\n' +
-      'matches = { foreground = "#' + color6.value + '", background = "#' + color1.value + '"}\n' +
-      'focused_match = { foreground = "#' + color6.value + '", background = "#' + color2.value + '"}\n' +
+      'matches = { foreground = "#' + colors.value[5].value + '", background = "#' + colors.value[0].value + '"}\n' +
+      'focused_match = { foreground = "#' + colors.value[5].value + '", background = "#' + colors.value[1].value + '"}\n' +
       '[colors.normal]\n' +
-      'black = "#' + color6.value + '"\n' +
-      'red = "#' + color3.value + '"\n' +
-      'green = "#' + color2.value + '"\n' +
-      'yellow = "#' + color4.value + '"\n' +
-      'blue = "#' + color1.value + '"\n' +
-      'magenta = "#' + color1.value + '"\n' +
-      'cyan = "#' + color2.value + '"\n' +
-      'white = "#' + color5.value + '"\n' +
+      'black = "#' + colors.value[5].value + '"\n' +
+      'red = "#' + colors.value[2].value + '"\n' +
+      'green = "#' + colors.value[1].value + '"\n' +
+      'yellow = "#' + colors.value[3].value + '"\n' +
+      'blue = "#' + colors.value[0].value + '"\n' +
+      'magenta = "#' + colors.value[0].value + '"\n' +
+      'cyan = "#' + colors.value[1].value + '"\n' +
+      'white = "#' + colors.value[4].value + '"\n' +
       '[colors.bright]\n' +
-      'black = "#' + addHex(color6.value, brightAdd) + '"\n' +
-      'red = "#' + addHex(color3.value, brightAdd) + '"\n' +
-      'green = "#' + addHex(color2.value, brightAdd) + '"\n' +
-      'yellow = "#' + addHex(color4.value, brightAdd) + '"\n' +
-      'blue = "#' + addHex(color1.value, brightAdd) + '"\n' +
-      'magenta = "#' + addHex(color1.value, brightAdd) + '"\n' +
-      'cyan = "#' + addHex(color2.value, brightAdd) + '"\n' +
-      'white = "#' + addHex(color5.value, brightAdd) + '"'
+      'black = "#' + addHex(colors.value[5].value, brightAdd) + '"\n' +
+      'red = "#' + addHex(colors.value[2].value, brightAdd) + '"\n' +
+      'green = "#' + addHex(colors.value[1].value, brightAdd) + '"\n' +
+      'yellow = "#' + addHex(colors.value[3].value, brightAdd) + '"\n' +
+      'blue = "#' + addHex(colors.value[0].value, brightAdd) + '"\n' +
+      'magenta = "#' + addHex(colors.value[0].value, brightAdd) + '"\n' +
+      'cyan = "#' + addHex(colors.value[1].value, brightAdd) + '"\n' +
+      'white = "#' + addHex(colors.value[4].value, brightAdd) + '"'
     return theme
   }
   const update = (colorId: number, newColor: string) => {
