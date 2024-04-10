@@ -31,8 +31,30 @@ export const useColorsStore = defineStore('colors', () => {
       placeholder: 'Fondo'
     }
   ])
-  const brightAdd = '111111'
 
+  onMounted (() => {
+    const colorsDefault = ['82A8D9', '6F87A6', '3F5573', 'B2B1E6', 'BBCDF2', '222F40']
+    const colorsLocal = ref()
+    if (localStorage.getItem('colors') !== null ){
+      colorsLocal.value = JSON.parse(localStorage.getItem('colors')!)
+      colorsLocal.value.forEach((color: any) => {
+        update(color.id, color.value)
+      })
+    }
+    console.log(colorsLocal.value)
+  })
+  const brightAdd = '111111'
+  const update = (colorId: number, newColor: string) => {
+    const target = colors.value.find((color) => color.id === colorId)
+    if (target) {
+      newColor = newColor.toUpperCase()
+      localStorage.setItem('colors', JSON.stringify(target.value))
+      newColor !== '' ? target.value = newColor : target.value = '000000'
+    } else {
+      console.log("object not found")
+    }
+    saveInLocal()
+  }
   const getBackground = (colorId: number) => {
     const target = colors.value.find((color) => color.id === colorId)
     return target ? `background-color: #${target.value};` : 'background-color: #000000;'
@@ -67,13 +89,8 @@ export const useColorsStore = defineStore('colors', () => {
       'white = "#' + addHex(colors.value[4].value, brightAdd) + '"'
     return theme
   }
-  const update = (colorId: number, newColor: string) => {
-    const target = colors.value.find((color) => color.id === colorId)
-    if (target) {
-      newColor !== '' ? target.value = newColor : target.value = '000000'
-    } else {
-      console.log("object not found")
-    }
+  const saveInLocal = () => {
+    localStorage.setItem('colors', JSON.stringify(colors.value)) 
   }
   return { colors, getBackground, getTheme, update }
 })
