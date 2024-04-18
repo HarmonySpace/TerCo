@@ -39,10 +39,11 @@ const copyColor = (color: string) => {
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
-    <div class="flex flex-wrap gap-2 w-full lg:w-2/3">
-      <ButtonsButtonText class="grow basis-full md:basis-1/4" v-for="button in buttons" :key="button.id"
+    <div class="flex flex-wrap gap-2 w-full lg:w-full">
+      <ButtonsButtonText class="grow basis-full md:basis-1/6" v-for="button in buttons" :key="button.id"
         :text="button.text" :class="selected_button === button.id ? active_class : normal_class"
         @click="selectButton(button.id)" :disabled="button.disable" />
+      <InputsSimpleInput class="grow-[2] basis-full md:basis-2/6" @getValue="(value) => store.updateFile(value)" :placeholder="store.getFile()"  /> 
     </div>
     <section class="mt-8 flex flex-wrap justify-between items-center gap-4 w-full">
       <section class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full">

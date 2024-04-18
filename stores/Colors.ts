@@ -31,16 +31,22 @@ export const useColorsStore = defineStore('colors', () => {
       placeholder: 'Fondo'
     }
   ])
+  const file_name = ref('simple')
   const brightAdd = '111111'
 
   onMounted (() => {
     const colorsDefault = ['82A8D9', '6F87A6', '3F5573', 'B2B1E6', 'BBCDF2', '222F40']
     const colorsLocal = ref()
-    if (localStorage.getItem('colors') !== null ){
+    const fileLocal = ref()
+    if ( localStorage.getItem('colors') !== null ){
       colorsLocal.value = JSON.parse(localStorage.getItem('colors')!)
       colorsLocal.value.forEach((color: any) => {
         update(color.id, color.value)
       })
+    }
+    if( localStorage.getItem('file') !== null ){
+      fileLocal.value = JSON.parse(localStorage.getItem('file')!)
+      updateFile(fileLocal.value)
     }
     console.log(colorsLocal.value)
   })
@@ -92,5 +98,12 @@ export const useColorsStore = defineStore('colors', () => {
   const saveInLocal = () => {
     localStorage.setItem('colors', JSON.stringify(colors.value)) 
   }
-  return { colors, getBackground, getTheme, update }
+  const getFile = () => {
+    return file_name.value
+  }
+  const updateFile = (new_name: string) => {
+    file_name.value = new_name
+    localStorage.setItem('file', JSON.stringify(file_name.value))
+  }
+  return { colors, getBackground, getTheme, update, getFile, updateFile }
 })

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const store =  useColorsStore()
 const copyThis = ref('')
 const { copy } = useClipboard({ source: copyThis })
 const copyCode = () => {
@@ -11,7 +12,7 @@ const copyCode = () => {
 <div class="flex justify-between items-center">
 	<pre class="w-full">
 <code class="w-full text-lg">
-<span class="head">cd</span><span class="value"> ~/alacritty-themes</span><span class="char"> && </span><span class="head">touch</span><span class="value"> simple.toml</span>
+<span class="head">cd</span><span class="value"> ~/alacritty-themes</span><span class="char"> && </span><span class="head">touch</span><span class="value"> {{ store.getFile() }}.toml</span>
 </code>
 </pre>
 <ButtonsCopyButton class="w-fit translate-x-4" @click="copyCode()"></ButtonsCopyButton>

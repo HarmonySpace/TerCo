@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const store =  useColorsStore()
 const copyThis = ref('')
 const { copy } = useClipboard({ source: copyThis })
 const copyCode = () => {
@@ -15,7 +16,7 @@ const copyCode = () => {
 		<pre class="w-full">
 <code class="w-full text-lg">
 <span class="head">import</span><span class="char"> = [</span>
-<span class="value">	"~/alacritty-themes/simple.toml"</span>
+<span class="value">	"~/alacritty-themes/{{ store.getFile() }}.toml"</span>
 <span class="char">]</span>
 </code>
 </pre>
