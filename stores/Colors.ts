@@ -33,9 +33,9 @@ export const useColorsStore = defineStore('colors', () => {
   ])
   const file_name = ref('simple')
   const brightAdd = '111111'
+  const colorsDefault = ['82A8D9', '6F87A6', '3F5573', 'B2B1E6', 'BBCDF2', '222F40']
 
   onMounted (() => {
-    const colorsDefault = ['82A8D9', '6F87A6', '3F5573', 'B2B1E6', 'BBCDF2', '222F40']
     const colorsLocal = ref()
     const fileLocal = ref()
     if ( localStorage.getItem('colors') !== null ){
@@ -105,5 +105,13 @@ export const useColorsStore = defineStore('colors', () => {
     file_name.value = new_name
     localStorage.setItem('file', JSON.stringify(file_name.value))
   }
-  return { colors, getBackground, getTheme, update, getFile, updateFile }
+  const reset = () => {
+    updateFile("simple")
+    let i = 0;
+    colors.value.forEach(color => {
+      update(color.id, colorsDefault[i]) 
+      i++
+    });
+  }
+  return { colors, getBackground, getTheme, update, getFile, updateFile, reset }
 })

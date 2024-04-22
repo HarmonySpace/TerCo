@@ -35,15 +35,19 @@ const copyColor = (color: string) => {
   copyThis.value = color
   copy(copyThis.value)
 }
+const resetColors = () => {
+  store.reset()
+}
 </script>
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
     <div class="flex flex-wrap gap-2 w-full lg:w-full">
-      <ButtonsButtonText class="grow basis-full md:basis-1/6" v-for="button in buttons" :key="button.id"
+      <ButtonsButtonText class="grow basis-full md:basis-1/12" v-for="button in buttons" :key="button.id"
         :text="button.text" :class="selected_button === button.id ? active_class : normal_class"
         @click="selectButton(button.id)" :disabled="button.disable" />
-      <InputsSimpleInput class="grow-[2] basis-full md:basis-2/6" @getValue="(value) => store.updateFile(value)" :placeholder="store.getFile()"  /> 
+      <InputsSimpleInput class="grow-[2] basis-full md:basis-5/12" @getValue="(value) => store.updateFile(value)" :placeholder="store.getFile()"  /> 
+      <ButtonsIconButton class="grow basis-full md:basis-1/12" icon="heroicons:arrow-path-16-solid" @click="resetColors()" />
     </div>
     <section class="mt-8 flex flex-wrap justify-between items-center gap-4 w-full">
       <section class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full">
