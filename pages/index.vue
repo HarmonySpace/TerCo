@@ -85,7 +85,7 @@ const resetColors = () => {
       >
         <div
           v-for="color in store.colors"
-          class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer"
+          class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
           :style="store.getBackground(color.id)"
           @click="copyColor(color.value)"
         ></div>
