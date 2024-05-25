@@ -107,9 +107,8 @@ const resetColors = () => {
       <ListSimpleEnumList number="1">
         <template v-slot:header>Crear una carpeta de temas</template>
         <template v-slot:description
-          >Para contener los temas de colores puedes crear una carpeta en la
-          ruta principal de tu usuario o bien en una ruta
-          personalizada</template
+          >Crear una carpeta para contener los temas creados y no mezclarlos con
+          los propios.</template
         >
       </ListSimpleEnumList>
       <CodesSimpleCodeBlock class="my-8">
@@ -118,9 +117,8 @@ const resetColors = () => {
       <ListSimpleEnumList number="2">
         <template v-slot:header>Crear un archivo</template>
         <template v-slot:description
-          >Para contener los temas de colores puedes crear una carpeta en la
-          ruta principal de tu usuario o bien en una ruta
-          personalizada</template
+          >Crea el archivo del tema con extencion .toml en la carpeta
+          creada.</template
         >
       </ListSimpleEnumList>
       <CodesSimpleCodeBlock class="my-8">
@@ -129,7 +127,8 @@ const resetColors = () => {
       <ListSimpleEnumList number="3">
         <template v-slot:header>Agregar el tema</template>
         <template v-slot:description
-          >Abrimos el archivo con un editor de texto y pegamos el tema generado
+          >Agrega las líneas de código generadas por la página de Terco_ en el
+          archivo que acabas de crear. (Tema default)
         </template>
       </ListSimpleEnumList>
       <CodesSimpleCodeBlock class="my-8">
@@ -138,8 +137,8 @@ const resetColors = () => {
       <ListSimpleEnumList number="4">
         <template v-slot:header>Configuración de alacritty</template>
         <template v-slot:description
-          >Agrega la siguiente línea en la parte superior de la configuración de
-          alacritty</template
+          >Agrega la siguiente línea en la parte superior de tu archivo de
+          configuración para alacritty.</template
         >
       </ListSimpleEnumList>
       <CodesSimpleCodeBlock class="my-8">
