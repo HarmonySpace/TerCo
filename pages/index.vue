@@ -132,7 +132,7 @@ const resetColors = () => {
         </template>
       </ListSimpleEnumList>
       <CodesSimpleCodeBlock class="my-8">
-        <CodesAlacrittySimpleTheme />
+        <CodesAlacrittySimpleThemeFull />
       </CodesSimpleCodeBlock>
       <ListSimpleEnumList number="4">
         <template v-slot:header>Configuración de alacritty</template>

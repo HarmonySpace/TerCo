@@ -31,6 +31,15 @@ const copyCode = () => {
 <span class="propiety">magenta</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[0].value, '111111') }}"</span>
 <span class="propiety">cyan</span><span class="char"> = </span><span class="value">"#{{ store.colors[1].value }}"</span>
 <span class="propiety">white</span><span class="char"> = </span><span class="value">"#{{ restHex(store.colors[4].value, '111111') }}"</span>
+<span class="head">[colors.bright]</span>
+<span class="propiety">black</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[5].value, '222222') }}"</span>
+<span class="propiety">red</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[2].value, '111111') }}"</span>
+<span class="propiety">green</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[1].value, '111111') }}"</span>
+<span class="propiety">yellow</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[3].value, '111111') }}"</span>
+<span class="propiety">blue</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[0].value, '111111') }}"</span>
+<span class="propiety">magenta</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[0].value, '222222') }}"</span>
+<span class="propiety">cyan</span><span class="char"> = </span><span class="value">"#{{ addHex(store.colors[2].value, '111111') }}"</span>
+<span class="propiety">white</span><span class="char"> = </span><span class="value">"#{{ restHex(store.colors[4].value, '222222') }}"</span>
 </code>
     </pre>
   </div>
