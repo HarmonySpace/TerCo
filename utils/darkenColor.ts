@@ -4,6 +4,6 @@ export default (hex: string, percent: number) => {
   let b = parseInt(hex.slice(4,6), 16)
   r = Math.round(r * (1 - percent))
   g = Math.round(g * (1 - percent))
-  b= Math.round(b* (1 - percent))
+  b = Math.round(b* (1 - percent))
   return ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')
 }

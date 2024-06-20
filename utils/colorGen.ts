@@ -6,10 +6,10 @@ export default (method: string) => {
   let n:number = 0
   let color_gen:string = ""
   if(method === "brighten"){
-    n = 0.4
+    n = Math.random() * (1- 0.9) + 0.9
     color_gen = brightenColor(color, n)
   } else {
-    n = 0.8
+    n = Math.random() * (1 - 0.7) + 0.7
     color_gen = darkenColor(color, n)
   }
   return color_gen;
