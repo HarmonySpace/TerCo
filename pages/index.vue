@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const bg = ref("");
+const file = ref("");
 const store = useColorsStore();
 const normal_class = "text-mercury-400";
 const active_class = "bg-mercury-300 text-shark-900";
@@ -8,7 +10,7 @@ const { copy } = useClipboard({ source: copyThis });
 const buttons = [
   {
     id: 1,
-    text: "6 Colores",
+    text: "4 Colores",
     value: 6,
     disable: false,
   },
@@ -31,13 +33,24 @@ const selectButton = (id: number) => {
 const updateColor = (id: number, color: string) => {
   store.update(id, color);
 };
+const updateFile = (name: string) => {
+  file.value = name;
+  store.updateFile(file.value);
+  console.log(file.value);
+};
 const copyColor = (color: string) => {
   copyThis.value = color;
   copy(copyThis.value);
 };
 const resetColors = () => {
   store.reset();
+  file.value = "";
 };
+const generate_background = (id: number) => {
+  bg.value = bgColorGen();
+  updateColor(id, bg.value);
+};
+file.value = store.getFile();
 </script>
 
 <template>
@@ -54,13 +67,14 @@ const resetColors = () => {
       />
       <InputsSimpleInput
         class="grow-[2] basis-full md:basis-5/12"
-        @getValue="(value) => store.updateFile(value)"
+        @getValue="(value) => updateFile(value)"
         :placeholder="store.getFile()"
+        :value="file"
       />
       <ButtonsIconButton
         class="grow basis-full md:basis-1/12"
         icon="heroicons:arrow-path-16-solid"
-        @click="store.reset"
+        @click="resetColors()"
       />
     </div>
     <section
@@ -69,13 +83,31 @@ const resetColors = () => {
       <section
         class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full"
       >
-        <InputsSimpleInput
-          v-for="color in store.colors"
-          key="color.id"
-          :id="'inputColor' + color.id"
-          :placeholder="color.placeholder"
-          @getValue="(value) => updateColor(color.id, value)"
-        />
+        <template v-for="color in store.colors" key="color.id">
+          <div
+            v-if="color.id === 6"
+            class="flex justify-between items-center gap-4 w-full"
+          >
+            <Icon
+              name="mdi:dice-3"
+              @click="generate_background(color.id)"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
+            />
+            <InputsSimpleInput
+              :id="'inputColor' + color.id"
+              :placeholder="color.placeholder"
+              :value="bg"
+              @getValue="(value) => updateColor(color.id, value)"
+            />
+          </div>
+          <div v-else>
+            <InputsSimpleInput
+              :id="'inputColor' + color.id"
+              :placeholder="color.placeholder"
+              @getValue="(value) => updateColor(color.id, value)"
+            />
+          </div>
+        </template>
         <div
           class="flex w-full h-full rounded-xl bg-mercury-300 dark:bg-shark-800"
         ></div>
