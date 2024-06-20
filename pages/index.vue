@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const fg = ref("");
 const bg = ref("");
 const file = ref("");
 const store = useColorsStore();
@@ -45,12 +46,17 @@ const copyColor = (color: string) => {
 const resetColors = () => {
   store.reset();
   file.value = "";
+  fg.value = "";
+  bg.value = "";
+};
+const generate_foreground = (id: number) => {
+  fg.value = colorGen("brighten");
+  updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-  bg.value = bgColorGen();
+  bg.value = colorGen();
   updateColor(id, bg.value);
 };
-file.value = store.getFile();
 </script>
 
 <template>
@@ -91,7 +97,7 @@ file.value = store.getFile();
             <Icon
               name="mdi:dice-3"
               @click="generate_background(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-shark-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
             />
             <InputsSimpleInput
               :id="'inputColor' + color.id"
@@ -100,6 +106,23 @@ file.value = store.getFile();
               @getValue="(value) => updateColor(color.id, value)"
             />
           </div>
+          <div
+            v-else-if="color.id === 5"
+            class="flex justify-between items-center gap-4 w-full"
+          >
+            <Icon
+              name="mdi:dice-3"
+              @click="generate_foreground(color.id)"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-shark-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
+            />
+            <InputsSimpleInput
+              :id="'inputColor' + color.id"
+              :placeholder="color.placeholder"
+              :value="fg"
+              @getValue="(value) => updateColor(color.id, value)"
+            />
+          </div>
+
           <div v-else>
             <InputsSimpleInput
               :id="'inputColor' + color.id"
