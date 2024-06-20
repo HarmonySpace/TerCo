@@ -45,12 +45,12 @@ const copyColor = (color: string) => {
 const resetColors = () => {
   store.reset();
   file.value = "";
+  bg.value = "";
 };
 const generate_background = (id: number) => {
   bg.value = bgColorGen();
   updateColor(id, bg.value);
 };
-file.value = store.getFile();
 </script>
 
 <template>
