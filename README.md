@@ -50,23 +50,23 @@ background = "#222F40"
 matches = { foreground = "#222F40", background = "#82A8D9"}
 focused_match = { foreground = "#222F40", background = "#6F87A6"}
 [colors.normal]
-black = "#222F40"
+black = "#334051"
 red = "#3F5573"
 green = "#6F87A6"
 yellow = "#B2B1E6"
 blue = "#82A8D9"
-magenta = "#82A8D9"
+magenta = "#93b9ea"
 cyan = "#6F87A6"
-white = "#BBCDF2"
+white = "#aabce1"
 [colors.bright]
-black = "#334051"
+black = "#445162"
 red = "#506684"
 green = "#8098b7"
 yellow = "#c3c2f7"
 blue = "#93b9ea"
-magenta = "#93b9ea"
+magenta = "#a4cafb"
 cyan = "#8098b7"
-white = "#ccdf03"
+white = "#ddf014"
 ```
 
 Agrega la siguiente línea en la parte superior de tu archivo de configuración para alacritty.
