@@ -54,7 +54,7 @@ const generate_foreground = (id: number) => {
   updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-  bg.value = colorGen();
+  bg.value = colorGen("");
   updateColor(id, bg.value);
 };
 const moreBright = (id: number) => {
@@ -158,7 +158,7 @@ const moreDark = (id: number) => {
         <div
           v-for="color in store.colors"
           class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
-          :style="store.getBackground(color.id)"
+          :style="bgGen(color.id)"
           @click="copyColor(color.value)"
         ></div>
       </section>

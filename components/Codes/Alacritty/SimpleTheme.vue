@@ -3,7 +3,7 @@ const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-  copyThis.value = store.getTheme();
+  copyThis.value = themeGen();
   copy(copyThis.value);
 };
 </script>
