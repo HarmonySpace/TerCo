@@ -54,7 +54,15 @@ const generate_foreground = (id: number) => {
   updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-  bg.value = colorGen();
+  bg.value = colorGen("");
+  updateColor(id, bg.value);
+};
+const moreBright = (id: number) => {
+  fg.value = brightenColor(fg.value, 0.1);
+  updateColor(id, fg.value);
+};
+const moreDark = (id: number) => {
+  bg.value = darkenColor(bg.value, 0.1);
   updateColor(id, bg.value);
 };
 </script>
@@ -91,29 +99,18 @@ const generate_background = (id: number) => {
       >
         <template v-for="color in store.colors" key="color.id">
           <div
-            v-if="color.id === 6"
-            class="flex justify-between items-center gap-4 w-full"
-          >
-            <Icon
-              name="mdi:dice-3"
-              @click="generate_background(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-shark-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
-            />
-            <InputsSimpleInput
-              :id="'inputColor' + color.id"
-              :placeholder="color.placeholder"
-              :value="bg"
-              @getValue="(value) => updateColor(color.id, value)"
-            />
-          </div>
-          <div
-            v-else-if="color.id === 5"
+            v-if="color.id === 5"
             class="flex justify-between items-center gap-4 w-full"
           >
             <Icon
               name="mdi:dice-3"
               @click="generate_foreground(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-shark-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
+            />
+            <Icon
+              name="heroicons:arrow-up-16-solid"
+              @click="moreBright(color.id)"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
             />
             <InputsSimpleInput
               :id="'inputColor' + color.id"
@@ -122,7 +119,27 @@ const generate_background = (id: number) => {
               @getValue="(value) => updateColor(color.id, value)"
             />
           </div>
-
+          <div
+            v-else-if="color.id === 6"
+            class="flex justify-between items-center gap-4 w-full"
+          >
+            <Icon
+              name="mdi:dice-3"
+              @click="generate_background(color.id)"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
+            />
+            <Icon
+              name="heroicons:arrow-down-16-solid"
+              @click="moreDark(color.id)"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-mercury-500"
+            />
+            <InputsSimpleInput
+              :id="'inputColor' + color.id"
+              :placeholder="color.placeholder"
+              :value="bg"
+              @getValue="(value) => updateColor(color.id, value)"
+            />
+          </div>
           <div v-else>
             <InputsSimpleInput
               :id="'inputColor' + color.id"
@@ -141,7 +158,7 @@ const generate_background = (id: number) => {
         <div
           v-for="color in store.colors"
           class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
-          :style="store.getBackground(color.id)"
+          :style="bgGen(color.id)"
           @click="copyColor(color.value)"
         ></div>
       </section>

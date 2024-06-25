@@ -1,10 +1,10 @@
 export default (method: string) => {
-  const store:array[string] = useColorsStore();
-  const colors_store:array[string] = store.colors.map((color) => color.value)
+  const store = useColorsStore();
+  const colors_store:Array<string> = store.colors.map((color) => color.value)
   colors_store.splice(-2)
   const color:string = elementRand(colors_store)
-  let n:number = 0
-  let color_gen:string = ""
+  let n = 0
+  let color_gen = ""
   if(method === "brighten"){
     n = Math.random() * (1- 0.9) + 0.9
     color_gen = brightenColor(color, n)
