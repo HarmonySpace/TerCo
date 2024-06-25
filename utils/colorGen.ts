@@ -1,5 +1,5 @@
 export default (method: string) => {
-  const store:array[string] = useColorsStore();
+  const store = useColorsStore();
   const colors_store:array[string] = store.colors.map((color) => color.value)
   colors_store.splice(-2)
   const color:string = elementRand(colors_store)
