@@ -44,47 +44,59 @@ export const useColorsStore = defineStore("colors", () => {
   onMounted(() => {
     const colorsLocal = ref();
     const fileLocal = ref();
-    if (localStorage.getItem("colors") !== null) {
-      colorsLocal.value = JSON.parse(localStorage.getItem("colors")!);
-      colorsLocal.value.forEach((color: any) => {
-        update(color.id, color.value);
-      });
+    const colors = localStorage.getItem("colors")
+    if (colors !== null) {
+      colorsLocal.value = JSON.parse(colors);
+      for (const color of colorsLocal.value) {
+        update(color.id, color.value)
+      }
     }
-    if (localStorage.getItem("file") !== null) {
-      fileLocal.value = JSON.parse(localStorage.getItem("file")!);
+    const file = localStorage.getItem("file")
+    if (file !== null) {
+      fileLocal.value = JSON.parse(file);
       updateFile(fileLocal.value);
     }
   });
-  const update = (colorId: number, newColor: string) => {
+
+  const update = (colorId: number, colorNew: string) => {
     const target = colors.value.find((color) => color.id === colorId);
     if (target) {
-      newColor = newColor.toUpperCase();
+      const targetColor = colorNew.toUpperCase();
       localStorage.setItem("colors", JSON.stringify(target.value));
-      newColor !== "" ? (target.value = newColor) : (target.value = "000000");
+      if (targetColor) {
+        target.value = targetColor
+      } else {
+        target.value = "000000"
+      }
     } else {
       console.log("object not found");
     }
     saveInLocal();
   };
+
   const saveInLocal = () => {
     localStorage.setItem("colors", JSON.stringify(colors.value));
   };
+
   const getFile = () => {
     return file_name.value;
   };
+
   const updateFile = (new_name: string) => {
     file_name.value = new_name;
     localStorage.setItem("file", JSON.stringify(file_name.value));
   };
+
   const reset = () => {
     updateFile("simple");
     let i = 0;
-    colors.value.forEach((color) => {
-      update(color.id, colorsDefault[i]);
+    for (const color of colors.value) {
+      update(color.id, colorsDefault[i])
       i++;
-    });
+    }
   };
-  return {
+
+ return {
     colors,
     update,
     getFile,
