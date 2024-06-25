@@ -4,7 +4,7 @@ const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
   copyThis.value =
-    "cd ~/alacritty-themes && touch " + store.getFile() + ".toml";
+    `cd ~/alacritty-themes && touch ${store.getFile()}.toml`;
   copy(copyThis.value);
 };
 </script>
