@@ -8,5 +8,5 @@ export default (hex: string, percent: number) => {
   r = Math.min(255, r)
   g = Math.min(255, g)
   b = Math.min(255, b)
-  return ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')
+  return ((r << 16) | (g << 8) | b).toString(16).padStart(6, 'f')
 }
