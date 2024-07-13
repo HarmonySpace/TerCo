@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const menuActive = ref(false)
+const menuActive = ref(false);
 </script>
 
 <template>
