@@ -105,12 +105,12 @@ const moreDark = (id: number) => {
             <Icon
               name="mdi:dice-3"
               @click="generate_foreground(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
             <Icon
               name="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
             <InputsSimpleInput
               :id="'inputColor' + color.id"
@@ -126,12 +126,12 @@ const moreDark = (id: number) => {
             <Icon
               name="mdi:dice-3"
               @click="generate_background(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-shark-500"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
             <Icon
               name="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-shark-700 hover:cursor-pointer hover:scale-90 dark:text-mercury-500"
+              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-mercury-500 dark:hover:text-shark-700"
             />
             <InputsSimpleInput
               :id="'inputColor' + color.id"
