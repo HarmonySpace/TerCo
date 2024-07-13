@@ -3,8 +3,8 @@ const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-  copyThis.value = `import=[\n  "~/alacritty-themes/${store.getFile()}.toml"\n]`;
-  copy(copyThis.value);
+	copyThis.value = `import=[\n  "~/alacritty-themes/${store.getFile()}.toml"\n]`;
+	copy(copyThis.value);
 };
 </script>
 

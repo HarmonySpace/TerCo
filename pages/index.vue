@@ -9,61 +9,61 @@ const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const buttons = [
-  {
-    id: 1,
-    text: "4 Colores",
-    value: 6,
-    disable: false,
-  },
-  {
-    id: 2,
-    text: "8 Colores",
-    value: 8,
-    disable: true,
-  },
-  {
-    id: 3,
-    text: "12 Colores",
-    value: 12,
-    disable: true,
-  },
+	{
+		id: 1,
+		text: "4 Colores",
+		value: 6,
+		disable: false,
+	},
+	{
+		id: 2,
+		text: "8 Colores",
+		value: 8,
+		disable: true,
+	},
+	{
+		id: 3,
+		text: "12 Colores",
+		value: 12,
+		disable: true,
+	},
 ];
 const selectButton = (id: number) => {
-  selected_button.value = id;
+	selected_button.value = id;
 };
 const updateColor = (id: number, color: string) => {
-  store.update(id, color);
+	store.update(id, color);
 };
 const updateFile = (name: string) => {
-  file.value = name;
-  store.updateFile(file.value);
-  console.log(file.value);
+	file.value = name;
+	store.updateFile(file.value);
+	console.log(file.value);
 };
 const copyColor = (color: string) => {
-  copyThis.value = color;
-  copy(copyThis.value);
+	copyThis.value = color;
+	copy(copyThis.value);
 };
 const resetColors = () => {
-  store.reset();
-  file.value = "";
-  fg.value = "";
-  bg.value = "";
+	store.reset();
+	file.value = "";
+	fg.value = "";
+	bg.value = "";
 };
 const generate_foreground = (id: number) => {
-  fg.value = colorGen("brighten");
-  updateColor(id, fg.value);
+	fg.value = colorGen("brighten");
+	updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-  bg.value = colorGen("");
-  updateColor(id, bg.value);
+	bg.value = colorGen("");
+	updateColor(id, bg.value);
 };
 const moreBright = (id: number) => {
-  fg.value = brightenColor(fg.value, 0.1);
-  updateColor(id, fg.value);
+	fg.value = brightenColor(fg.value, 0.1);
+	updateColor(id, fg.value);
 };
 const moreDark = (id: number) => {
-  bg.value = darkenColor(bg.value, 0.1);
-  updateColor(id, bg.value);
+	bg.value = darkenColor(bg.value, 0.1);
+	updateColor(id, bg.value);
 };
 </script>
 
@@ -102,16 +102,26 @@ const moreDark = (id: number) => {
             v-if="color.id === 5"
             class="flex justify-between items-center gap-4 w-full"
           >
-            <Icon
-              name="mdi:dice-3"
+            <ButtonsIconButton
+              class="grow basis-full md:basis-1/12"
+              icon="mdi:dice-3"
               @click="generate_foreground(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
-            <Icon
-              name="heroicons:arrow-up-16-solid"
+            <ButtonsIconButton
+              class="grow basis-full md:basis-1/12"
+              icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
+            <!-- <Icon -->
+              <!-- name="mdi:dice-3" -->
+              <!-- @click="generate_foreground(color.id)" -->
+              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
+            <!-- /> -->
+            <!-- <Icon -->
+              <!-- name="heroicons:arrow-up-16-solid" -->
+              <!-- @click="moreBright(color.id)" -->
+              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
+            <!-- /> -->
             <InputsSimpleInput
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
@@ -123,16 +133,27 @@ const moreDark = (id: number) => {
             v-else-if="color.id === 6"
             class="flex justify-between items-center gap-4 w-full"
           >
-            <Icon
-              name="mdi:dice-3"
+
+            <ButtonsIconButton
+              class="grow basis-full md:basis-1/12"
+              icon="mdi:dice-3"
               @click="generate_background(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700"
             />
-            <Icon
-              name="heroicons:arrow-down-16-solid"
+            <ButtonsIconButton
+              class="grow basis-full md:basis-1/12"
+              icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
-              class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-mercury-500 dark:hover:text-shark-700"
             />
+            <!-- <Icon -->
+              <!-- name="mdi:dice-3" -->
+              <!-- @click="generate_background(color.id)" -->
+              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
+            <!-- /> -->
+            <!-- <Icon -->
+              <!-- name="heroicons:arrow-down-16-solid" -->
+              <!-- @click="moreDark(color.id)" -->
+              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-mercury-500 dark:hover:text-shark-700" -->
+            <!-- /> -->
             <InputsSimpleInput
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const copyThis = ref('')
-const { copy } = useClipboard({ source: copyThis })
+const copyThis = ref("");
+const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-	copyThis.value = 'mkdir ~/alacritty-themes'
-	copy(copyThis.value)
-}
+	copyThis.value = "mkdir ~/alacritty-themes";
+	copy(copyThis.value);
+};
 </script>
 
 <template>

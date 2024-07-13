@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{html,js}'],
-	darkMode: 'class',
+	content: ["./src/**/*.{html,js}"],
+	darkMode: "class",
 	theme: {
 		colors: {
-			"shark": {
+			shark: {
 				50: "#EFF2F5",
 				100: "#E3E7ED",
 				200: "#C4CDD9",
@@ -15,9 +15,9 @@ module.exports = {
 				700: "#445469",
 				800: "#303B4A",
 				900: "#1D242D",
-				950: "#0E1116"
+				950: "#0E1116",
 			},
-			"mercury": {
+			mercury: {
 				50: "#F8F7F7",
 				100: "#F3F2F2",
 				200: "#E5E3E3",
@@ -28,12 +28,12 @@ module.exports = {
 				700: "#5A5353",
 				800: "#3A3636",
 				900: "#1D1B1B",
-				950: "#100F0F"
-			}
+				950: "#100F0F",
+			},
 		},
 		fontFamily: {
-			chivo: ['Chivo', 'monospace'],
-			bold: ['Chivo-Bold', 'monospace']
-		}
-	}
-}
+			chivo: ["Chivo", "monospace"],
+			bold: ["Chivo-Bold", "monospace"],
+		},
+	},
+};

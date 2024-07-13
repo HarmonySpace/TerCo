@@ -1,18 +1,17 @@
 <script setup lang="ts">
 const anchors = [
-  {
-    name: 'Github',
-    url: 'https://github.com/HarmonySpace/TerCo/tree/main',
-    icon: ''
-  },
-  {
-    name: 'Buy me a coffee',
-    url: 'https://www.buymeacoffee.com/jchavaspacp',
-    icon: ''
-  }
-]
-const showMenu = ref(false)
-
+	{
+		name: "Github",
+		url: "https://github.com/HarmonySpace/TerCo/tree/main",
+		icon: "",
+	},
+	{
+		name: "Buy me a coffee",
+		url: "https://www.buymeacoffee.com/jchavaspacp",
+		icon: "",
+	},
+];
+const showMenu = ref(false);
 </script>
 
 <template>

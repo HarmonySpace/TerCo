@@ -4,8 +4,8 @@ const storeB = useBrightStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-  copyThis.value = themeGen();
-  copy(copyThis.value);
+	copyThis.value = themeGen();
+	copy(copyThis.value);
 };
 </script>
 
