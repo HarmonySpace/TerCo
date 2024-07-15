@@ -21,15 +21,15 @@ const menuActive = ref(false);
 <style>
 @font-face {
   font-family: "Chivo";
-  src: url("fonts/Chivo-Regular.woff2"),
-    url("fonts/Chivo-Regular.ttf");
+  src: url("/fonts/Chivo-Regular.woff2"),
+    url("/fonts/Chivo-Regular.ttf");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Chivo-Bold";
-  src: url("fonts/Chivo-ExtraBold.woff2"),
-    url("fonts/Chivo-ExtraBold.ttf");
+  src: url("/fonts/Chivo-ExtraBold.woff2"),
+    url("/fonts/Chivo-ExtraBold.ttf");
   font-display: swap;
 }
 
