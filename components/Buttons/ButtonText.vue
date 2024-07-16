@@ -4,7 +4,7 @@ const props = defineProps(["text"]);
 
 <template>
 	<button
-		class="outline-none border-none py-4 px-12 text-sm rounded-xl text-shark-900 bg-mercury-400 dark:text-mercury-200 dark:bg-shark-700 ttransition-all duration-200 ease-out hover:bg-mercury-400 dark:hover:bg-shark-600 active:bg-mercury-500 dark:active:bg-shark-500 focus:text-mercury-200 focus:bg-mercury-600 dark:focus:text-shark-900 dark:focus:bg-shark-400 disabled:text-mercury-400 disabled:bg-mercury-300 dark:disabled:text-shark-700 dark:disabled:bg-shark-800">
+		class="outline-none border-none py-4 px-12 text-sm rounded-xl text-shark-900 bg-mercury-300 dark:text-shark-200 dark:bg-shark-900 transition-all duration-200 ease-out hover:bg-mercury-400 dark:hover:bg-shark-800 active:bg-mercury-400 dark:active:bg-shark-700 focus:text-mercury-900 focus:bg-mercury-500 dark:focus:text-shark-200 dark:focus:bg-shark-700 disabled:text-mercury-500 disabled:bg-mercury-200 dark:disabled:text-shark-700 dark:disabled:bg-shark-950">
 		{{ props.text }}
 	</button>
 </template>
