@@ -3,8 +3,7 @@ const fg = ref("");
 const bg = ref("");
 const file = ref("");
 const store = useColorsStore();
-const normal_class = "text-mercury-400";
-const active_class = "bg-mercury-300 text-shark-900";
+const active_class = ref("text-mercury-900 bg-mercury-500");
 const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
@@ -15,18 +14,18 @@ const buttons = [
 		value: 6,
 		disable: false,
 	},
-	{
+  {
 		id: 2,
-		text: "8 Colores",
-		value: 8,
+		text: "6 Colores",
+		value: 6,
 		disable: true,
 	},
 	{
 		id: 3,
-		text: "12 Colores",
-		value: 12,
+		text: "8 Colores",
+		value: 8,
 		disable: true,
-	},
+	}
 ];
 const selectButton = (id: number) => {
 	selected_button.value = id;
@@ -75,7 +74,7 @@ const moreDark = (id: number) => {
         v-for="button in buttons"
         :key="button.id"
         :text="button.text"
-        :class="selected_button === button.id ? active_class : normal_class"
+        :class="selected_button === button.id ? active_class : ''"
         @click="selectButton(button.id)"
         :disabled="button.disable"
       />
@@ -112,16 +111,6 @@ const moreDark = (id: number) => {
               icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
             />
-            <!-- <Icon -->
-              <!-- name="mdi:dice-3" -->
-              <!-- @click="generate_foreground(color.id)" -->
-              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
-            <!-- /> -->
-            <!-- <Icon -->
-              <!-- name="heroicons:arrow-up-16-solid" -->
-              <!-- @click="moreBright(color.id)" -->
-              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
-            <!-- /> -->
             <InputsSimpleInput
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
@@ -144,16 +133,6 @@ const moreDark = (id: number) => {
               icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
             />
-            <!-- <Icon -->
-              <!-- name="mdi:dice-3" -->
-              <!-- @click="generate_background(color.id)" -->
-              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-shark-500 dark:hover:text-shark-700" -->
-            <!-- /> -->
-            <!-- <Icon -->
-              <!-- name="heroicons:arrow-down-16-solid" -->
-              <!-- @click="moreDark(color.id)" -->
-              <!-- class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-500 transition-all duration-150 hover:text-mercury-700 hover:cursor-pointer active:scale-90 dark:text-mercury-500 dark:hover:text-shark-700" -->
-            <!-- /> -->
             <InputsSimpleInput
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
@@ -166,7 +145,7 @@ const moreDark = (id: number) => {
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
               @getValue="(value) => updateColor(color.id, value)"
-            />
+              />
           </div>
         </template>
         <div

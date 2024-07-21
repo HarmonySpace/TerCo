@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    
+    <h1>Página de tutorial</h1>
   </div>
 </template>
 
