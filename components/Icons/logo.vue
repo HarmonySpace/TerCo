@@ -1,39 +1,41 @@
+<script setup lang="ts">
+const props = defineProps({
+	width: {
+		type: Number,
+		default: 100,
+	},
+	height: {
+		type: Number,
+		default: 100,
+	}
+});
+</script>
+
 <template>
-	<svg viewBox="0 0 285.74997 78.853255" version="1.1" id="svg1" xml:space="preserve"
-		xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
-		xmlns:svg="http://www.w3.org/2000/svg">
-		<defs id="defs1">
-			<linearGradient id="swatch4">
-				<stop style="stop-color:#eeeeee;stop-opacity:1;" offset="0" id="stop4" />
-			</linearGradient>
-			<linearGradient id="swatch1">
-				<stop style="stop-color:#222222;stop-opacity:1;" offset="0" id="stop1" />
-			</linearGradient>
-			<linearGradient xlink:href="#swatch4" id="linearGradient4" x1="896.0141" y1="466.43585" x2="979.263"
-				y2="466.43585" gradientUnits="userSpaceOnUse" />
-		</defs>
-		<g id="g1" transform="translate(-2.3616291e-6,1.4188366e-5)" style="display:none">
-			<g id="layer3" transform="matrix(1.783604,0,0,1.783604,-1598.1343,-760.89996)">
-				<path
-					style="font-style:italic;font-weight:900;font-size:133.613px;font-family:Chivo;-inkscape-font-specification:'Chivo Heavy Italic';fill:url(#linearGradient4);fill-rule:evenodd;stroke-width:5952.48"
-					d="m 896.01408,506.26357 2.99456,-20.66251 54.65084,-19.01549 -49.41034,-19.16523 2.99457,-20.81223 72.01932,29.49647 -2.84484,20.81224 z"
-					id="text1" />
-			</g>
-		</g>
-		<g id="g12" transform="translate(-2.3616291e-6,1.4188366e-5)">
-			<g id="g16" transform="matrix(2.7954778,0,0,2.7954778,-317.33209,-162.29327)" style="fill-opacity:1"><text
-					xml:space="preserve"
-					style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40.5279px;font-family:Chivo;-inkscape-font-specification:Chivo;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
-					x="112.4625" y="85.857788" id="text14">
-					<tspan id="tspan14" style="fill-opacity:1;stroke-width:0" x="112.4625" y="85.857788">Ter</tspan>
-				</text><text xml:space="preserve"
-					style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.4286px;font-family:Chivo;-inkscape-font-specification:Chivo;fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
-					x="177.9577" y="79.929947" id="text15">
-					<tspan id="tspan15" style="fill-opacity:1;stroke-width:0" x="177.9577" y="79.929947">Co</tspan>
-				</text>
-				<rect style="fill-opacity:1;fill-rule:evenodd;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
-					id="rect15" width="35.797165" height="2.7830493" x="179.93771" y="83.480026" />
-			</g>
-		</g>
-	</svg>
+	<svg
+   :width="props.width"
+   :height="props.height"
+   viewBox="0 0 264.58333 264.58333"
+   version="1.1"
+   id="svg1"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       d="m 35.629349,0 v 48.106107 l 72.158901,17.895548 v 47.984155 l 25.2181,6.2792 22.88801,-5.7459 V 66.292077 l 72.1589,-18.18597 V 0 l -96.03651,24.052795 z m 0,144.31832 v 24.0528 24.05331 72.1589 h 48.106107 v -60.23612 l 48.942234,12.13001 47.26998,-11.92123 v 60.02734 h 48.10559 v -72.1589 -24.05331 -24.0528 l -95.82102,24.0528 z"
+       id="path13" />
+  </g>
+</svg>
 </template>
+<style scoped>
+svg {
+   stroke-width:0.621245;
+   stroke-linecap:round;
+   stroke-linejoin:round;
+   stroke-miterlimit:53.6
+}
+</style>
