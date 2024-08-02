@@ -7,6 +7,6 @@ const toggleColorMode = () => {
 </script>
 
 <template>
-  <Icon name="heroicons:sun" v-show="colorMode.preference === 'light'" @click="toggleColorMode" class="grow w-6 sm:w-8 h-8 sm:h-8 text-mercury-700 transition-all duration-150 hover:text-shark-900 hover:cursor-pointer hover:scale-75"/>
+  <Icon name="heroicons:sun" v-show="colorMode.preference === 'light'" @click="toggleColorMode" class="grow w-6 sm:w-8 h-8 sm:h-8 text-gray-600 transition-all duration-150 hover:text-gray-900 hover:cursor-pointer hover:scale-75"/>
   <Icon name="heroicons:moon" v-show="colorMode.preference === 'dark'" @click="toggleColorMode" class="grow w-6 sm:w-8 h-8 sm:h-8 text-shark-700 transition-all duration-150 hover:text-mercury-200 hover:cursor-pointer hover:scale-75"/>
 </template>
