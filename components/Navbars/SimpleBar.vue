@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const anchors = [
 	{
-		name: "Github",
+		name: "",
 		url: "https://github.com/HarmonySpace/TerCo/tree/main",
-		icon: "",
+		icon: "mingcute:github-line",
 	},
 	{
-		name: "Buy me a coffee",
+		name: "",
 		url: "https://www.buymeacoffee.com/jchavaspacp",
-		icon: "",
+		icon: "lucide:coffee",
 	},
 ];
 const showMenu = ref(false);
@@ -18,16 +18,15 @@ const showMenu = ref(false);
   <nav class="flex flex-wrap justify-between items-center">
     <div class="flex justify-between items-center w-full">
       <div class="h-8 flex justify-center items-center gap-8">
-        <h1 class="text-5xl sm:text-7xl md:text-9xl font-bold text-shark-900 dark:text-shark-500">Ter<span
-            class="text-shark-700 font-chivo underline decoration-solid relative bottom-0 sm:bottom-2 md:bottom-4">co</span>
-        </h1>
+        <IconsLogo class="h-12 w-12 fill-blue-500" />
+        <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-shark-500">TerCo</h1>
       </div>
       <section class="flex justify-end items-center gap-4 sm:gap-8">
         <section class="flex justify-end items-center gap-8">
           <ButtonsToggleColorMode></ButtonsToggleColorMode>
           <ul class="hidden lg:flex grow gap-8">
             <li
-              class="grow text-mercury-500 dark:text-shark-500 text-start text-xl transition-all duration-250 hover:text-shark-900 dark:hover:text-mercury-200"
+              class="grow text-gray-600 dark:text-shark-500 text-start text-2xl transition-all duration-250 hover:text-gray-900 dark:hover:text-mercury-200"
               v-for="anchor in anchors">
               <a :href="anchor.url"><Icon :name="anchor.icon" /> {{ anchor.name }}</a>
             </li>
