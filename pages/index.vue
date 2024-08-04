@@ -3,26 +3,25 @@ const fg = ref("");
 const bg = ref("");
 const file = ref("");
 const store = useColorsStore();
-const active_class = ref("text-mercury-900 bg-mercury-500");
 const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const buttons = [
 	{
 		id: 1,
-		text: "4 Colores",
+		text: "4",
 		value: 6,
 		disable: false,
 	},
   {
 		id: 2,
-		text: "6 Colores",
+		text: "6",
 		value: 6,
 		disable: true,
 	},
 	{
 		id: 3,
-		text: "8 Colores",
+		text: "8",
 		value: 8,
 		disable: true,
 	}
@@ -68,24 +67,23 @@ const moreDark = (id: number) => {
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
-    <div class="flex flex-wrap gap-2 w-full lg:w-full">
+    <div class="flex flex-wrap gap-2 w-full md:flex-nowrap lg:w-full">
       <ButtonsButtonText
-        class="grow basis-full md:basis-1/12"
+        class="grow basis-full md:basis-0"
         v-for="button in buttons"
         :key="button.id"
         :text="button.text"
-        :class="selected_button === button.id ? active_class : ''"
         @click="selectButton(button.id)"
         :disabled="button.disable"
       />
       <InputsSimpleInput
-        class="grow-[2] basis-full md:basis-5/12"
+        class="grow basis-full md:basis-12/12"
         @getValue="(value) => updateFile(value)"
         :placeholder="store.getFile()"
         :value="file"
       />
       <ButtonsIconButton
-        class="grow basis-full md:basis-1/12"
+        class="grow basis-0 px-6"
         icon="heroicons:arrow-path-16-solid"
         @click="resetColors()"
       />
