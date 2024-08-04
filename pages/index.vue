@@ -83,7 +83,7 @@ const moreDark = (id: number) => {
         :value="file"
       />
       <ButtonsIconButton
-        class="grow basis-0"
+        class="grow basis-0 px-6"
         icon="heroicons:arrow-path-16-solid"
         @click="resetColors()"
       />
