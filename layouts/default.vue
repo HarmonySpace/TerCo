@@ -3,7 +3,7 @@ const menuActive = ref(false);
 </script>
 
 <template>
-  <body class="flex flex-wrap justify-center items-center w-95dvw bg-mercury-200 dark:bg-shark-950">
+  <body class="flex flex-wrap justify-center items-center w-95dvw bg-gray-100 dark:bg-shark-950">
     <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
         <NavbarsSimpleBar @itsActive="() => { menuActive = !menuActive }" />

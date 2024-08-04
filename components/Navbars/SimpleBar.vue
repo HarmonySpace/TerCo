@@ -22,15 +22,11 @@ const showMenu = ref(false);
         <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-shark-500">TerCo</h1>
       </div>
       <section class="flex justify-end items-center gap-4 sm:gap-8">
-        <section class="flex justify-end items-center gap-8">
+        <section class="flex justify-end items-center gap-12">
           <ButtonsToggleColorMode></ButtonsToggleColorMode>
-          <ul class="hidden lg:flex grow gap-8">
-            <li
-              class="grow text-gray-600 dark:text-shark-500 text-start text-2xl transition-all duration-250 hover:text-gray-900 dark:hover:text-mercury-200"
-              v-for="anchor in anchors">
-              <a :href="anchor.url"><Icon :name="anchor.icon" /> {{ anchor.name }}</a>
-            </li>
-          </ul>
+          <ButtonsIconButton
+          v-for="anchor in anchors" :key="anchor.name" :href="anchor.url" :icon="anchor.icon">
+        </ButtonsIconButton>
         </section>
         <svg @click="showMenu = !showMenu; $emit('itsActive')" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 24 24" stroke-width="2" class="w-8 sm:w-12 stroke-shark-900 dark:stroke-shark-500 lg:hidden transition-all duration-150 hover:cursor-pointer hover:scale-75" :class="{ 'rotate-90': showMenu }">
