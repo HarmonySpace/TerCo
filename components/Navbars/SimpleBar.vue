@@ -19,7 +19,7 @@ const showMenu = ref(false);
     <div class="flex justify-between items-center w-full">
       <div class="h-8 flex justify-center items-center gap-8">
         <IconsLogo class="h-12 w-12 fill-blue-500" />
-        <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-shark-500">TerCo</h1>
+        <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-gray-200">TerCo</h1>
       </div>
       <section class="flex justify-end items-center gap-4 sm:gap-8">
         <section class="flex justify-end items-center gap-12">

@@ -147,7 +147,7 @@ const moreDark = (id: number) => {
           </div>
         </template>
         <div
-          class="flex w-full h-full rounded-xl bg-mercury-300 dark:bg-shark-800"
+          class="flex w-full h-full rounded-xl bg-gray-200 dark:bg-gray-900"
         ></div>
       </section>
       <section
@@ -170,7 +170,7 @@ const moreDark = (id: number) => {
     </section>
     <section class="flex flex-wrap justify-start items-center w-full mt-32">
       <h1
-        class="text-5xl font-bold text-shark-800 dark:text-mercury-200 w-full"
+        class="text-5xl font-bold text-gray-900 dark:text-gray-100 w-full"
       >
         Cómo usarlo
       </h1>
