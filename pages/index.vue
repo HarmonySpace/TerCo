@@ -1,67 +1,67 @@
 <script setup lang="ts">
+const store = useColorsStore();
 const fg = ref("");
 const bg = ref("");
 const file = ref("");
-const store = useColorsStore();
 const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const buttons = [
-	{
-		id: 1,
-		text: "4",
-		value: 6,
-		disable: false,
-	},
   {
-		id: 2,
-		text: "6",
-		value: 6,
-		disable: true,
-	},
-	{
-		id: 3,
-		text: "8",
-		value: 8,
-		disable: true,
-	}
+    id: 1,
+    text: "4",
+    value: 6,
+    disable: false,
+  },
+  {
+    id: 2,
+    text: "6",
+    value: 6,
+    disable: true,
+  },
+  {
+    id: 3,
+    text: "8",
+    value: 8,
+    disable: true,
+  },
 ];
 const selectButton = (id: number) => {
-	selected_button.value = id;
+  selected_button.value = id;
 };
 const updateColor = (id: number, color: string) => {
-	store.update(id, color);
+  store.update(id, color);
 };
 const updateFile = (name: string) => {
-	file.value = name;
-	store.updateFile(file.value);
-	console.log(file.value);
+  file.value = name;
+  store.updateFile(file.value);
+  console.log(file.value);
 };
 const copyColor = (color: string) => {
-	copyThis.value = color;
-	copy(copyThis.value);
+  copyThis.value = color;
+  copy(copyThis.value);
 };
 const resetColors = () => {
-	store.reset();
-	file.value = "";
-	fg.value = "";
-	bg.value = "";
+  store.reset();
+  file.value = "";
+  fg.value = "";
+  bg.value = "";
 };
 const generate_foreground = (id: number) => {
-	fg.value = colorGen("brighten");
-	updateColor(id, fg.value);
+  fg.value = colorGen("brighten");
+  updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-	bg.value = colorGen("");
-	updateColor(id, bg.value);
+  bg.value = colorGen("");
+  updateColor(id, bg.value);
 };
 const moreBright = (id: number) => {
-	fg.value = brightenColor(fg.value, 0.1);
-	updateColor(id, fg.value);
+  fg.value = brightenColor(fg.value, 0.1);
+  updateColor(id, fg.value);
 };
 const moreDark = (id: number) => {
-	bg.value = darkenColor(bg.value, 0.1);
-	updateColor(id, bg.value);
+  bg.value = darkenColor(bg.value, 0.1);
+  updateColor(id, bg.value);
 };
 </script>
 
@@ -88,9 +88,7 @@ const moreDark = (id: number) => {
         @click="resetColors()"
       />
     </div>
-    <section
-      class="mt-8 flex flex-wrap justify-between items-center gap-4 w-full"
-    >
+    <section class="mt-8 flex flex-wrap justify-between items-center gap-4">
       <section
         class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full"
       >
@@ -120,7 +118,6 @@ const moreDark = (id: number) => {
             v-else-if="color.id === 6"
             class="flex justify-between items-center gap-4 w-full"
           >
-
             <ButtonsIconButton
               class="grow basis-full md:basis-1/12"
               icon="mdi:dice-3"
@@ -143,7 +140,7 @@ const moreDark = (id: number) => {
               :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
               @getValue="(value) => updateColor(color.id, value)"
-              />
+            />
           </div>
         </template>
         <div
@@ -155,23 +152,21 @@ const moreDark = (id: number) => {
       >
         <div
           v-for="color in store.colors"
-          class="flex flex-auto w-full h-full transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
-          :style="bgGen(color.id)"
+          class="flex flex-auto transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
+          :style="bgGen(color.value)"
           @click="copyColor(color.value)"
         ></div>
       </section>
       <section
-        class="flex justify-center items-center grow basis-full xl:basis-3/6 w-full"
+        class="w-full h-fit xl:h-full flex justify-center items-center grow basis-full xl:basis-3/6"
       >
-        <CodesSimpleCodeBlock>
-          <CodesAlacrittySimpleTheme />
-        </CodesSimpleCodeBlock>
+        <OtherPreviewTheme />
       </section>
     </section>
-    <section class="flex flex-wrap justify-start items-center w-full mt-32">
-      <h1
-        class="text-5xl font-bold text-gray-900 dark:text-gray-100 w-full"
-      >
+    <section
+      class="flex flex-wrap justify-start items-center w-full h-full mt-32"
+    >
+      <h1 class="text-5xl font-bold text-gray-900 dark:text-gray-100 w-full">
         Cómo usarlo
       </h1>
       <ListSimpleEnumList number="1">
