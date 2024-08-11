@@ -1,7 +1,3 @@
-export default (id: number) => {
-	const store = useColorsStore();
-	const color = store.colors.find((color) => color.id === id);
-	return color
-		? `background-color: #${color.value};`
-		: "background-color: #000000;";
+export default (color: string) => {
+  return color ? `background-color: #${color};` : "background-color: #000000;";
 };
