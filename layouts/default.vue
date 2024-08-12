@@ -3,13 +3,26 @@ const menuActive = ref(false);
 </script>
 
 <template>
-  <body class="flex flex-wrap justify-center items-center w-95dvw bg-gray-100 dark:bg-gray-950">
+  <body
+    class="flex flex-wrap justify-center items-center w-full bg-gray-100 dark:bg-gray-950"
+  >
     <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
-        <NavbarsSimpleBar @itsActive="() => { menuActive = !menuActive }" />
+        <NavbarsSimpleBar
+          @itsActive="
+            () => {
+              menuActive = !menuActive;
+            }
+          "
+        />
       </header>
-      <Transition name="main" :class="{ menuActiveClass: menuActive, menuInactiveClass: !menuActive }">
-        <main class="flex flex-wrap justify-center items-center w-full transition-all duration-150 ease-out">
+      <Transition
+        name="main"
+        :class="{ menuActiveClass: menuActive, menuInactiveClass: !menuActive }"
+      >
+        <main
+          class="flex flex-wrap justify-center items-center w-full transition-all duration-150 ease-out"
+        >
           <slot />
         </main>
       </Transition>
@@ -21,15 +34,13 @@ const menuActive = ref(false);
 <style>
 @font-face {
   font-family: "Chivo";
-  src: url("/fonts/Chivo-Regular.woff2"),
-    url("/fonts/Chivo-Regular.ttf");
+  src: url("/fonts/Chivo-Regular.woff2"), url("/fonts/Chivo-Regular.ttf");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Chivo-Bold";
-  src: url("/fonts/Chivo-ExtraBold.woff2"),
-    url("/fonts/Chivo-ExtraBold.ttf");
+  src: url("/fonts/Chivo-ExtraBold.woff2"), url("/fonts/Chivo-ExtraBold.ttf");
   font-display: swap;
 }
 
@@ -37,7 +48,7 @@ const menuActive = ref(false);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Chivo', monospace;
+  font-family: "Chivo", monospace;
   text-wrap: wrap;
 }
 </style>
