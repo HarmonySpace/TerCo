@@ -67,7 +67,7 @@ const moreDark = (id: number) => {
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
-    <div class="flex flex-wrap gap-2 w-full md:flex-nowrap lg:w-full">
+    <div class="flex flex-wrap gap-2 w-full md:flex-nowrap">
       <ButtonsButtonText
         class="grow basis-full md:basis-0"
         v-for="button in buttons"
@@ -83,7 +83,7 @@ const moreDark = (id: number) => {
         :value="file"
       />
       <ButtonsIconButton
-        class="grow basis-0 px-6"
+        class="grow basis-1 px-6"
         icon="heroicons:arrow-path-16-solid"
         @click="resetColors()"
       />
@@ -98,12 +98,12 @@ const moreDark = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="grow basis-full md:basis-1/12"
+              class="grow basis-1/12"
               icon="mdi:dice-3"
               @click="generate_foreground(color.id)"
             />
             <ButtonsIconButton
-              class="grow basis-full md:basis-1/12"
+              class="grow md:basis-1/12"
               icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
             />
@@ -119,12 +119,12 @@ const moreDark = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="grow basis-full md:basis-1/12"
+              class="grow basis-1/12"
               icon="mdi:dice-3"
               @click="generate_background(color.id)"
             />
             <ButtonsIconButton
-              class="grow basis-full md:basis-1/12"
+              class="grow md:basis-1/12"
               icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
             />
