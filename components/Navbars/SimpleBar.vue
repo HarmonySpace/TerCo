@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const anchors = [
-  {
-    name: "Github",
-    url: "https://github.com/HarmonySpace/TerCo/tree/main",
-    icon: "mingcute:github-line",
-  },
-  {
-    name: "Suport me",
-    url: "https://www.buymeacoffee.com/jchavaspacp",
-    icon: "lucide:coffee",
-  },
+	{
+		name: "Github",
+		url: "https://github.com/HarmonySpace/TerCo/tree/main",
+		icon: "mingcute:github-line",
+	},
+	{
+		name: "Suport me",
+		url: "https://www.buymeacoffee.com/jchavaspacp",
+		icon: "lucide:coffee",
+	},
 ];
 const showMenu = ref(false);
 </script>
@@ -18,7 +18,7 @@ const showMenu = ref(false);
   <nav class="w-full flex flex-wrap justify-between items-center">
     <div class="flex justify-between items-center w-full">
       <div class="h-8 flex justify-center items-center gap-8">
-        <IconsLogo class="h-8 md:h-12 w-8 md:w-12 fill-blue-500" />
+        <IconsLogo class="w-icon md:h-12 md:w-12 fill-blue-500" />
         <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-gray-200">
           TerCo
         </h1>
@@ -26,8 +26,8 @@ const showMenu = ref(false);
       <section class="flex justify-end items-center gap-4 sm:gap-8">
         <section class="flex justify-end items-center gap-12">
           <ButtonsToggleColorMode></ButtonsToggleColorMode>
-          <ButtonsIconButton class="hidden md:flex" v-for="anchor in anchors" :key="anchor.name" :href="anchor.url"
-            :icon="anchor.icon">
+          <ButtonsIconButton class="hidden lg:flex w-icon-2 justify-center items-center" v-for="anchor in anchors"
+            :key="anchor.name" :href="anchor.url" :icon="anchor.icon">
           </ButtonsIconButton>
         </section>
         <svg @click="
@@ -43,7 +43,7 @@ const showMenu = ref(false);
     <Transition name="nav">
       <div class="pt-32 flex flex-wrap justidy-start items-start w-full lg:hidden" v-show="showMenu">
         <h1 class="w-full text-shark-900 dark:text-shark-300 text-5xl font-bold pb-8">
-          Menu
+          Menú
         </h1>
         <ul class="flex flex-col">
           <li v-for="anchor in anchors">

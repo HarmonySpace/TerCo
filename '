@@ -73,13 +73,13 @@ const moreDark = (id: number) => {
 
 <template>
   <section class="pt-32 flex flex-wrap justify-between w-full">
-    <div class="flex flex-wrap justify-center items-center gap-2 w-full h-full md:flex-nowrap">
-      <ButtonsButtonText class="grow basis-full md:basis-1/12" v-for="button in buttons" :key="button.id"
+    <div class="flex flex-wrap gap-2 w-full md:flex-nowrap">
+      <ButtonsButtonText class="grow basis-full md:basis-0" v-for="button in buttons" :key="button.id"
         :text="button.text" @click="selectButton(button.id)" :disabled="button.disable" />
-      <InputsSimpleInput class="grow basis-full md:basis-auto" @getValue="(value) => updateFile(value)"
+      <InputsSimpleInput class="grow basis-full md:basis-12/12" @getValue="(value) => updateFile(value)"
         :placeholder="store.getFile()" :value="file" />
-      <ButtonsIconButton class="grow basis-full w-icon-1 my-8 md:basis-1/12 md:my-0"
-        icon="heroicons:arrow-path-16-solid" @click="resetColors()" />
+      <ButtonsIconButton class="grow basis-1 h-full w-icon-1 " icon="heroicons:arrow-path-16-solid"
+        @click="resetColors()" />
     </div>
     <section class="mt-8 flex flex-wrap justify-between items-center gap-4">
       <section class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full">
