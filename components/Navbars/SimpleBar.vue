@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const anchors = [
-	{
-		name: "Github",
-		url: "https://github.com/HarmonySpace/TerCo/tree/main",
-		icon: "mingcute:github-line",
-	},
-	{
-		name: "Suport me",
-		url: "https://www.buymeacoffee.com/jchavaspacp",
-		icon: "lucide:coffee",
-	},
+  {
+    name: "Github",
+    url: "https://github.com/HarmonySpace/TerCo/tree/main",
+    icon: "mingcute:github-line",
+  },
+  {
+    name: "Suport me",
+    url: "https://www.buymeacoffee.com/jchavaspacp",
+    icon: "lucide:coffee",
+  },
 ];
 const showMenu = ref(false);
 </script>
@@ -18,8 +18,8 @@ const showMenu = ref(false);
   <nav class="w-full flex flex-wrap justify-between items-center">
     <div class="flex justify-between items-center w-full">
       <div class="h-8 flex justify-center items-center gap-8">
-        <IconsLogo class="w-icon md:h-12 md:w-12 fill-blue-500" />
-        <h1 class="text-5xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-gray-200">
+        <IconsLogo class="w-icon-1 md:h-12 md:w-12 fill-blue-500" />
+        <h1 class="text-3xl sm:text-7xl md:text-6xl font-normal text-gray-900 dark:text-gray-200">
           TerCo
         </h1>
       </div>
