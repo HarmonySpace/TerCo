@@ -97,7 +97,7 @@ export const useColorsStore = defineStore("colors", () => {
     updateFile("simple");
     let i = 0;
     for (const color of colors.value) {
-      update(color.id, colorsDefault[i]);
+      update(color.id, colorsDefault.value[i]);
       i++;
     }
   };

@@ -7,67 +7,74 @@ const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const buttons = [
-	{
-		id: 1,
-		text: "4",
-		value: 6,
-		disable: false,
-	},
-	{
-		id: 2,
-		text: "6",
-		value: 6,
-		disable: true,
-	},
-	{
-		id: 3,
-		text: "8",
-		value: 8,
-		disable: true,
-	},
+  {
+    id: 1,
+    text: "4",
+    value: 6,
+    disable: false,
+  },
+  {
+    id: 2,
+    text: "6",
+    value: 6,
+    disable: true,
+  },
+  {
+    id: 3,
+    text: "8",
+    value: 8,
+    disable: true,
+  },
 ];
 const profiles = [
-	{
-		id: 1,
-		name: "Alacritty",
-	},
+  {
+    id: 1,
+    name: "Alacritty",
+  },
 ];
 const selectButton = (id: number) => {
-	selected_button.value = id;
+  selected_button.value = id;
 };
 const updateColor = (id: number, color: string) => {
-	store.update(id, color);
+  store.update(id, color);
 };
 const updateFile = (name: string) => {
-	file.value = name;
-	store.updateFile(file.value);
-	console.log(file.value);
+  file.value = name;
+  store.updateFile(file.value);
+};
+const updateFg = (id: number, color: string) => {
+  fg.value = color;
+  updateColor(id, color);
+};
+const updateBg = (id: number, color: string) => {
+  bg.value = color;
+  updateColor(id, color);
 };
 const copyColor = (color: string) => {
-	copyThis.value = color;
-	copy(copyThis.value);
+  copyThis.value = color;
+  copy(copyThis.value);
 };
 const resetColors = () => {
-	store.reset();
-	file.value = "";
-	fg.value = "";
-	bg.value = "";
+  store.reset();
+  file.value = "";
+  fg.value = "";
+  bg.value = "";
 };
 const generate_foreground = (id: number) => {
-	fg.value = colorGen("brighten");
-	updateColor(id, fg.value);
+  fg.value = colorGen("brighten");
+  updateColor(id, fg.value);
 };
 const generate_background = (id: number) => {
-	bg.value = colorGen("");
-	updateColor(id, bg.value);
+  bg.value = colorGen("");
+  updateColor(id, bg.value);
 };
 const moreBright = (id: number) => {
-	fg.value = brightenColor(fg.value, 0.1);
-	updateColor(id, fg.value);
+  fg.value = brightenColor(fg.value, 0.1);
+  updateColor(id, fg.value);
 };
 const moreDark = (id: number) => {
-	bg.value = darkenColor(bg.value, 0.1);
-	updateColor(id, bg.value);
+  bg.value = darkenColor(bg.value, 0.1);
+  updateColor(id, bg.value);
 };
 </script>
 
@@ -88,15 +95,15 @@ const moreDark = (id: number) => {
             <ButtonsIconButton class="grow basis-1/12" icon="mdi:dice-3" @click="generate_foreground(color.id)" />
             <ButtonsIconButton class="grow md:basis-1/12" icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)" />
-            <InputsSimpleInput :id="'inputColor' + color.id" :placeholder="color.placeholder" :value="fg"
-              @getValue="(value) => updateColor(color.id, value)" />
+            <InputsSimpleInput :id="'inputColor' + color.id" :placeholder="color.placeholder"
+              @getValue="(value) => updateFg(color.id, value)" :value="fg" />
           </div>
           <div v-else-if="color.id === 6" class="flex justify-between items-center gap-4 w-full">
             <ButtonsIconButton class="grow basis-1/12" icon="mdi:dice-3" @click="generate_background(color.id)" />
             <ButtonsIconButton class="grow md:basis-1/12" icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)" />
-            <InputsSimpleInput :id="'inputColor' + color.id" :placeholder="color.placeholder" :value="bg"
-              @getValue="(value) => updateColor(color.id, value)" />
+            <InputsSimpleInput :id="'inputColor' + color.id" :placeholder="color.placeholder"
+              @getValue="(value) => updateBg(color.id, value)" :value="bg" />
           </div>
           <div v-else>
             <InputsSimpleInput :id="'inputColor' + color.id" :placeholder="color.placeholder"
