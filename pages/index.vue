@@ -76,6 +76,12 @@ const moreDark = (id: number) => {
   bg.value = darkenColor(bg.value, 0.1);
   updateColor(id, bg.value);
 };
+const copyCode = (id: number) => {
+  if (id === 1) {
+    copyThis.value = alacrittyThemeGen();
+    copy(copyThis.value);
+  }
+}
 </script>
 
 <template>
@@ -126,8 +132,7 @@ const moreDark = (id: number) => {
       <div v-for="profile in profiles" key="profile.id" class="mt-5 flex w-full justify-start items-start gap-8">
         <span class="sm:w-1/6 text-xl text-gray-700 dark:text-gray-500">{{ profile.name }}</span>
         <div class="flex justify-start items-center gap-4">
-          <ButtonsIconButton class="w-icon-2" icon="heroicons:clipboard" />
-          <ButtonsIconButton class="w-icon-2" icon="heroicons:archive-box-arrow-down" />
+          <ButtonsIconButton class="w-icon-2" icon="heroicons:clipboard" @click="copyCode(profile.id)" />
         </div>
       </div>
     </section>
