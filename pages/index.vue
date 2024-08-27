@@ -1,4 +1,7 @@
 <script setup lang="ts">
+useHead({
+  title: "TerCo - Terminal Color",
+})
 const store = useColorsStore();
 const fg = ref("");
 const bg = ref("");
