@@ -1,6 +1,12 @@
 <script setup lang="ts">
 useHead({
   title: "TerCo - Terminal Color",
+  meta: [
+    {
+      name: "A easy terminal color theme generator",
+      content: "Terco - Terminal color theme generator for alacritty, easy to use and apply in the latest version of alacritty",
+    },
+  ],
 })
 const store = useColorsStore();
 const fg = ref("");
