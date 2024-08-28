@@ -2,7 +2,6 @@
 const colorMode = useColorMode();
 const toggleColorMode = () => {
 	colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
-	console.log(colorMode.preference);
 };
 </script>
 
