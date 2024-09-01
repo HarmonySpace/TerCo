@@ -111,12 +111,12 @@ const copyCode = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="basis-1/12"
+              class="basis-1/12 sm:h-8"
               icon="mdi:dice-3"
               @click="generate_foreground(color.id)"
             />
             <ButtonsIconButton
-              class="basis-1/12"
+              class="basis-1/12 sm:h-8"
               icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
             />
@@ -132,12 +132,12 @@ const copyCode = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="basis-1/12"
+              class="basis-1/12 sm:h-8"
               icon="mdi:dice-3"
               @click="generate_background(color.id)"
             />
             <ButtonsIconButton
-              class="basis-1/12"
+              class="basis-1/12 sm:h-8"
               icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
             />
