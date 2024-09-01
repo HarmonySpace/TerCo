@@ -96,7 +96,7 @@ const copyCode = (id: number) => {
         :disabled="button.disable"
       />
       <ButtonsIconButton
-        class="basis-full w-icon-1 my-8 md:basis-1/12 md:my-0"
+        class="basis-full md:basis-1/12 w-icon-1 my-8 md:my-0 md:py-1"
         icon="heroicons:arrow-path-16-solid"
         @click="resetColors()"
       />
@@ -111,12 +111,12 @@ const copyCode = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="grow basis-1/12"
+              class="basis-1/12"
               icon="mdi:dice-3"
               @click="generate_foreground(color.id)"
             />
             <ButtonsIconButton
-              class="grow md:basis-1/12"
+              class="basis-1/12"
               icon="heroicons:arrow-up-16-solid"
               @click="moreBright(color.id)"
             />
@@ -132,12 +132,12 @@ const copyCode = (id: number) => {
             class="flex justify-between items-center gap-4 w-full"
           >
             <ButtonsIconButton
-              class="grow basis-1/12"
+              class="basis-1/12"
               icon="mdi:dice-3"
               @click="generate_background(color.id)"
             />
             <ButtonsIconButton
-              class="grow md:basis-1/12"
+              class="basis-1/12"
               icon="heroicons:arrow-down-16-solid"
               @click="moreDark(color.id)"
             />
