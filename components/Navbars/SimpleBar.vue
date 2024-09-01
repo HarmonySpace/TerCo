@@ -46,7 +46,7 @@ const showMenu = ref(false);
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="2"
-          class="w-6 sm:w-10 stroke-shark-900 dark:stroke-shark-500 lg:hidden transition-all duration-150 hover:cursor-pointer hover:scale-75"
+          class="w-8 sm:w-10 stroke-gray-900 dark:stroke-gray-400 lg:hidden transition-all duration-150 hover:cursor-pointer hover:scale-75"
           :class="{ 'rotate-90': showMenu }"
         >
           <path
@@ -63,7 +63,7 @@ const showMenu = ref(false);
         v-show="showMenu"
       >
         <h1
-          class="w-full text-shark-900 dark:text-shark-300 text-5xl font-bold pb-8"
+          class="w-full text-gray-900 dark:text-gray-300 text-5xl font-bold pb-8"
         >
           Menú
         </h1>
