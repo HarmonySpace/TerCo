@@ -12,7 +12,6 @@ useHead({
 const store = useColorsStore();
 const fg = ref("");
 const bg = ref("");
-const file = ref("");
 const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
@@ -30,15 +29,21 @@ const profiles = [
     name: "Alacritty",
   },
 ];
+const inputs = ref(
+  store.colors.map((color) => ({
+    id: color.id,
+    value: "",
+  })),
+);
 const selectButton = (id: number) => {
   selected_button.value = id;
 };
 const updateColor = (id: number, color: string) => {
   store.update(id, color);
 };
-const updateFile = (name: string) => {
-  file.value = name;
-  store.updateFile(file.value);
+const updateInput = (id: number, color: string) => {
+  inputs.value[id].value = color;
+  updateColor(id, color);
 };
 const updateFg = (id: number, color: string) => {
   fg.value = color;
@@ -54,9 +59,11 @@ const copyColor = (color: string) => {
 };
 const resetColors = () => {
   store.reset();
-  file.value = "";
   fg.value = "";
   bg.value = "";
+  inputs.value.map((input) => {
+    input.value = "";
+  });
 };
 const generate_foreground = (id: number) => {
   fg.value = colorGen("brighten");
@@ -121,10 +128,9 @@ const copyCode = (id: number) => {
               @click="moreBright(color.id)"
             />
             <InputsSimpleInput
-              :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
-              @getValue="(value: string) => updateFg(color.id, value)"
               :value="fg"
+              @getValue="(value: string) => updateFg(color.id, value)"
             />
           </div>
           <div
@@ -142,17 +148,16 @@ const copyCode = (id: number) => {
               @click="moreDark(color.id)"
             />
             <InputsSimpleInput
-              :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
-              @getValue="(value: string) => updateBg(color.id, value)"
               :value="bg"
+              @getValue="(value: string) => updateBg(color.id, value)"
             />
           </div>
           <div v-else>
             <InputsSimpleInput
-              :id="'inputColor' + color.id"
               :placeholder="color.placeholder"
-              @getValue="(value: string) => updateColor(color.id, value)"
+              :inputValue="inputs[color.id].value"
+              @getValue="(value: string) => updateInput(color.id, value)"
             />
           </div>
         </template>
