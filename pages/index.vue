@@ -10,11 +10,9 @@ useHead({
   ],
 });
 const store = useColorsStore();
-const fg = ref("");
-const bg = ref("");
-const selected_button = ref(1);
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
+const selected_button = ref(1);
 const buttons = [
   {
     id: 1,
@@ -23,18 +21,20 @@ const buttons = [
     disable: false,
   },
 ];
-const profiles = [
-  {
-    id: 1,
-    name: "Alacritty",
-  },
-];
+const fg = ref("");
+const bg = ref("");
 const inputs = ref(
   store.colors.map((color) => ({
     id: color.id,
     value: "",
   })),
 );
+const profiles = [
+  {
+    id: 1,
+    name: "Alacritty",
+  },
+];
 const selectButton = (id: number) => {
   selected_button.value = id;
 };
@@ -86,6 +86,10 @@ const copyCode = (id: number) => {
     copyThis.value = alacrittyThemeGen();
     copy(copyThis.value);
   }
+};
+const bgGenerator = (color: string) => {
+  const bg = bgGen(color);
+  return bg;
 };
 </script>
 
@@ -171,7 +175,7 @@ const copyCode = (id: number) => {
         <div
           v-for="color in store.colors"
           class="flex flex-auto transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
-          :style="bgGen(color.value)"
+          :style="bgGenerator(color.value)"
           @click="copyColor(color.value)"
         ></div>
       </section>
