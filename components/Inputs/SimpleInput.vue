@@ -17,10 +17,13 @@ watch(
     updateValue(newValue);
   },
 );
+const emits = defineEmits(["getValue"]);
 const updateValue = (newValue: string) => {
   inputValue.value = newValue;
 };
-const emits = defineEmits(["getValue"]);
+const reset = () => {
+  inputValue.value = "";
+};
 </script>
 
 <template>
