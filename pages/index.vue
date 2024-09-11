@@ -21,8 +21,6 @@ const buttons = [
     disable: false,
   },
 ];
-const fg = ref("");
-const bg = ref("");
 const inputs = ref(
   store.colors.map((color) => ({
     id: color.id,
@@ -42,44 +40,24 @@ const updateColor = (id: number, color: string) => {
   store.update(id, color);
 };
 const updateInput = (id: number, color: string) => {
-  inputs.value[id].value = color;
+  inputs.value[id - 1].value = color;
   updateColor(id, color);
-};
-const updateFg = (id: number, color: string) => {
-  fg.value = color;
-  updateColor(id, color);
-};
-const updateBg = (id: number, color: string) => {
-  bg.value = color;
-  updateColor(id, color);
-};
-const copyColor = (color: string) => {
-  copyThis.value = color;
-  copy(copyThis.value);
-};
-const resetColors = () => {
-  store.reset();
-  fg.value = "";
-  bg.value = "";
-  inputs.value.map((input) => {
-    input.value = "";
-  });
 };
 const generate_foreground = (id: number) => {
-  fg.value = colorGen("brighten");
-  updateColor(id, fg.value);
+  inputs.value[id - 1].value = colorGen("brighten");
+  updateColor(id, inputs.value[id - 1].value);
 };
 const generate_background = (id: number) => {
-  bg.value = colorGen("");
-  updateColor(id, bg.value);
+  inputs.value[id - 1].value = colorGen("");
+  updateColor(id, inputs.value[id - 1].value);
 };
 const moreBright = (id: number) => {
-  fg.value = brightenColor(fg.value, 0.1);
-  updateColor(id, fg.value);
+  inputs.value[id - 1].value = brightenColor(inputs.value[id - 1].value, 0.1);
+  updateColor(id, inputs.value[id - 1].value);
 };
 const moreDark = (id: number) => {
-  bg.value = darkenColor(bg.value, 0.1);
-  updateColor(id, bg.value);
+  inputs.value[id - 1].value = darkenColor(inputs.value[id - 1].value, 0.1);
+  updateColor(id, inputs.value[id - 1].value);
 };
 const copyCode = (id: number) => {
   if (id === 1) {
@@ -90,6 +68,16 @@ const copyCode = (id: number) => {
 const bgGenerator = (color: string) => {
   const bg = bgGen(color);
   return bg;
+};
+const copyColor = (color: string) => {
+  copyThis.value = color;
+  copy(copyThis.value);
+};
+const resetColors = () => {
+  store.reset();
+  inputs.value.map((input) => {
+    input.value = "";
+  });
 };
 </script>
 
@@ -133,8 +121,8 @@ const bgGenerator = (color: string) => {
             />
             <InputsSimpleInput
               :placeholder="color.placeholder"
-              :value="fg"
-              @getValue="(value: string) => updateFg(color.id, value)"
+              :text="inputs[color.id - 1].value"
+              @getText="(value: string) => updateInput(color.id, value)"
             />
           </div>
           <div
@@ -153,15 +141,15 @@ const bgGenerator = (color: string) => {
             />
             <InputsSimpleInput
               :placeholder="color.placeholder"
-              :value="bg"
-              @getValue="(value: string) => updateBg(color.id, value)"
+              :text="inputs[color.id - 1].value"
+              @getText="(value: string) => updateInput(color.id, value)"
             />
           </div>
           <div v-else>
             <InputsSimpleInput
               :placeholder="color.placeholder"
-              :inputValue="inputs[color.id].value"
-              @getValue="(value: string) => updateInput(color.id, value)"
+              :text="inputs[color.id - 1].value"
+              @getText="(value: string) => updateInput(color.id, value)"
             />
           </div>
         </template>

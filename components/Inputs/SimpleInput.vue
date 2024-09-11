@@ -4,34 +4,31 @@ const props = defineProps({
     type: String,
     default: "inset a text",
   },
-  inputValue: {
+  text: {
     type: String,
     default: "",
   },
 });
 const placeholder = ref();
-const inputValue = ref();
+const text = ref();
 watch(
-  () => props.inputValue,
-  (newValue: string) => {
-    updateValue(newValue);
+  () => props.text,
+  (value: string) => {
+    updateValue(value);
   },
 );
-const emits = defineEmits(["getValue"]);
-const updateValue = (newValue: string) => {
-  inputValue.value = newValue;
+const updateValue = (value: string) => {
+  text.value = value;
 };
-const reset = () => {
-  inputValue.value = "";
-};
+const emits = defineEmits(["getText"]);
 </script>
 
 <template>
   <input
     type="text"
     class="px-8 py-4 w-full rounded-xl border-none outline-none text-gray-900 bg-gray-200 placeholder-gray-500 focus:outline-blue-500 dark:text-gray-100 dark:bg-gray-900 dark:placeholder-gray-600 dark:focus:outline-blue-500"
-    v-model="inputValue"
+    v-model="text"
     :placeholder="props.placeholder"
-    @input="$emit('getValue', inputValue)"
+    @input="$emit('getText', text)"
   />
 </template>
