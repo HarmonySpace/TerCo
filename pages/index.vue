@@ -170,7 +170,7 @@ const resetColors = () => {
       <section
         class="w-full h-fit xl:h-full flex justify-center items-center grow basis-full xl:basis-3/6"
       >
-        <OtherPreviewTheme />
+        <PreviewTheme />
       </section>
     </section>
     <section
