@@ -3,17 +3,26 @@ const menuActive = ref(false);
 </script>
 
 <template>
-
-  <body class="flex flex-wrap justify-center items-center w-full bg-gray-100 dark:bg-gray-950">
+  <body
+    class="flex flex-wrap justify-center items-center w-full bg-gray-100 dark:bg-gray-950"
+  >
     <section class="pt-32 flex flex-wrap w-10/12">
       <header class="w-full">
-        <NavbarsSimpleBar @itsActive="() => {
-          menuActive = !menuActive;
-        }
-          " />
+        <NavsSimpleBar
+          @itsActive="
+            () => {
+              menuActive = !menuActive;
+            }
+          "
+        />
       </header>
-      <Transition name="main" :class="{ menuActiveClass: menuActive, menuInactiveClass: !menuActive }">
-        <main class="flex flex-wrap justify-center items-center w-full transition-all duration-150 ease-out">
+      <Transition
+        name="main"
+        :class="{ menuActiveClass: menuActive, menuInactiveClass: !menuActive }"
+      >
+        <main
+          class="flex flex-wrap justify-center items-center w-full transition-all duration-150 ease-out"
+        >
           <slot />
         </main>
       </Transition>
