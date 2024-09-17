@@ -12,35 +12,9 @@ useHead({
 const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
-const inputs = ref(
-  store.colors.map((color) => ({
-    id: color.id,
-    value: "",
-  })),
-);
-const updateColor = (id: number, color: string) => {
-  store.update(id, color);
-};
-const updateInput = (id: number, color: string) => {
-  inputs.value[id - 1].value = color;
-  updateColor(id, color);
-};
-const generate_foreground = (id: number) => {
-  inputs.value[id - 1].value = colorGen("brighten");
-  updateColor(id, inputs.value[id - 1].value);
-};
-const generate_background = (id: number) => {
-  inputs.value[id - 1].value = colorGen("");
-  updateColor(id, inputs.value[id - 1].value);
-};
-const moreBright = (id: number) => {
-  inputs.value[id - 1].value = brightenColor(inputs.value[id - 1].value, 0.1);
-  updateColor(id, inputs.value[id - 1].value);
-};
-const moreDark = (id: number) => {
-  inputs.value[id - 1].value = darkenColor(inputs.value[id - 1].value, 0.1);
-  updateColor(id, inputs.value[id - 1].value);
-};
+const indexColorInputs = ref<InstanceType<
+  typeof SectionsIndexColorInputs
+> | null>(null);
 const bgGenerator = (color: string) => {
   const bg = bgGen(color);
   return bg;
@@ -50,10 +24,9 @@ const copyColor = (color: string) => {
   copy(copyThis.value);
 };
 const resetColors = () => {
-  store.reset();
-  inputs.value.map((input) => {
-    input.value = "";
-  });
+  if (indexColorInputs.value) {
+    indexColorInputs.value.resetColors();
+  }
 };
 </script>
 
@@ -73,58 +46,7 @@ const resetColors = () => {
       <section
         class="flex flex-col justify-between gap-4 grow basis-1/6 h-fit xl:h-full"
       >
-        <template v-for="color in store.colors" key="color.id">
-          <div
-            v-if="color.id === 5"
-            class="flex justify-between items-center gap-4 w-full"
-          >
-            <ButtonsIconButton
-              class="basis-1/12 sm:h-8"
-              icon="mdi:dice-3"
-              @click="generate_foreground(color.id)"
-            />
-            <ButtonsIconButton
-              class="basis-1/12 sm:h-8"
-              icon="heroicons:arrow-up-16-solid"
-              @click="moreBright(color.id)"
-            />
-            <InputsSimpleInput
-              :placeholder="color.placeholder"
-              :text="inputs[color.id - 1].value"
-              @getText="(value: string) => updateInput(color.id, value)"
-            />
-          </div>
-          <div
-            v-else-if="color.id === 6"
-            class="flex justify-between items-center gap-4 w-full"
-          >
-            <ButtonsIconButton
-              class="basis-1/12 sm:h-8"
-              icon="mdi:dice-3"
-              @click="generate_background(color.id)"
-            />
-            <ButtonsIconButton
-              class="basis-1/12 sm:h-8"
-              icon="heroicons:arrow-down-16-solid"
-              @click="moreDark(color.id)"
-            />
-            <InputsSimpleInput
-              :placeholder="color.placeholder"
-              :text="inputs[color.id - 1].value"
-              @getText="(value: string) => updateInput(color.id, value)"
-            />
-          </div>
-          <div v-else>
-            <InputsSimpleInput
-              :placeholder="color.placeholder"
-              :text="inputs[color.id - 1].value"
-              @getText="(value: string) => updateInput(color.id, value)"
-            />
-          </div>
-        </template>
-        <div
-          class="flex w-full h-full rounded-xl bg-gray-200 dark:bg-gray-900"
-        ></div>
+        <SectionsIndexColorInputs ref="indexColorInputs" />
       </section>
       <section
         class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full"
