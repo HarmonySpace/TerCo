@@ -12,30 +12,12 @@ useHead({
 const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
-const selected_button = ref(1);
-const buttons = [
-  {
-    id: 1,
-    text: "4",
-    value: 6,
-    disable: false,
-  },
-];
 const inputs = ref(
   store.colors.map((color) => ({
     id: color.id,
     value: "",
   })),
 );
-const profiles = [
-  {
-    id: 1,
-    name: "Alacritty",
-  },
-];
-const selectButton = (id: number) => {
-  selected_button.value = id;
-};
 const updateColor = (id: number, color: string) => {
   store.update(id, color);
 };
@@ -80,14 +62,7 @@ const resetColors = () => {
     <div
       class="flex flex-wrap justify-start items-center gap-2 w-full h-full md:flex-nowrap"
     >
-      <ButtonsButtonText
-        class="basis-full md:basis-1/12"
-        v-for="button in buttons"
-        :key="button.id"
-        :text="button.text"
-        @click="selectButton(button.id)"
-        :disabled="button.disable"
-      />
+      <SectionsIndexButtons />
       <ButtonsIconButton
         class="basis-full md:basis-1/12 w-icon-1 my-8 md:my-0 md:py-1"
         icon="heroicons:arrow-path-16-solid"
