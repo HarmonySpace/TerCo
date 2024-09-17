@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { SectionsIndexColorInputs } from "#build/components";
 useHead({
   title: "TerCo - Terminal Color",
   meta: [
@@ -9,19 +10,12 @@ useHead({
     },
   ],
 });
-const store = useColorsStore();
-const copyThis = ref("");
-const { copy } = useClipboard({ source: copyThis });
 const indexColorInputs = ref<InstanceType<
   typeof SectionsIndexColorInputs
 > | null>(null);
 const bgGenerator = (color: string) => {
   const bg = bgGen(color);
   return bg;
-};
-const copyColor = (color: string) => {
-  copyThis.value = color;
-  copy(copyThis.value);
 };
 const resetColors = () => {
   if (indexColorInputs.value) {
@@ -51,12 +45,7 @@ const resetColors = () => {
       <section
         class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full"
       >
-        <div
-          v-for="color in store.colors"
-          class="flex flex-auto transition-all duration-300 ease-out hover:py-4 hover:cursor-pointer active:py-8"
-          :style="bgGenerator(color.value)"
-          @click="copyColor(color.value)"
-        ></div>
+        <PreviewColors />
       </section>
       <section
         class="w-full h-fit xl:h-full flex justify-center items-center grow basis-full xl:basis-3/6"
