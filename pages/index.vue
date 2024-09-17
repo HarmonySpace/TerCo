@@ -30,7 +30,7 @@ const resetColors = () => {
       class="flex flex-wrap justify-start items-center gap-2 w-full h-full md:flex-nowrap"
     >
       <SectionsIndexButtons />
-      <ButtonsIconButton
+      <ButtonsIcon
         class="basis-full md:basis-1/12 w-icon-1 my-8 md:my-0 md:py-1"
         icon="heroicons:arrow-path-16-solid"
         @click="resetColors()"

@@ -46,17 +46,17 @@ defineExpose({
       v-if="color.id === 5"
       class="flex justify-between items-center gap-4 w-full"
     >
-      <ButtonsIconButton
+      <ButtonsIcon
         class="basis-1/12 sm:h-8"
         icon="mdi:dice-3"
         @click="generate_foreground(color.id)"
       />
-      <ButtonsIconButton
+      <ButtonsIcon
         class="basis-1/12 sm:h-8"
         icon="heroicons:arrow-up-16-solid"
         @click="moreBright(color.id)"
       />
-      <InputsSimpleInput
+      <InputsSimple
         :placeholder="color.placeholder"
         :text="inputs[color.id - 1].value"
         @getText="(value: string) => updateInput(color.id, value)"
@@ -66,24 +66,24 @@ defineExpose({
       v-else-if="color.id === 6"
       class="flex justify-between items-center gap-4 w-full"
     >
-      <ButtonsIconButton
+      <ButtonsIcon
         class="basis-1/12 sm:h-8"
         icon="mdi:dice-3"
         @click="generate_background(color.id)"
       />
-      <ButtonsIconButton
+      <ButtonsIcon
         class="basis-1/12 sm:h-8"
         icon="heroicons:arrow-down-16-solid"
         @click="moreDark(color.id)"
       />
-      <InputsSimpleInput
+      <InputsSimple
         :placeholder="color.placeholder"
         :text="inputs[color.id - 1].value"
         @getText="(value: string) => updateInput(color.id, value)"
       />
     </div>
     <div v-else>
-      <InputsSimpleInput
+      <InputsSimple
         :placeholder="color.placeholder"
         :text="inputs[color.id - 1].value"
         @getText="(value: string) => updateInput(color.id, value)"

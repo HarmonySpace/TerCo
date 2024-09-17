@@ -23,7 +23,7 @@ const selectButton = (id: number) => {
   <div
     class="flex flex-wrap justify-start items-center gap-2 w-full h-full md:flex-nowrap"
   >
-    <ButtonsButtonText
+    <ButtonsText
       class="basis-full md:basis-1/12"
       v-for="button in buttons"
       :key="button.id"

@@ -3,14 +3,14 @@ const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-	copyThis.value = `import=[\n  "~/alacritty-themes/${store.getFile()}.toml"\n]`;
-	copy(copyThis.value);
+  copyThis.value = `import=[\n  "~/alacritty-themes/${store.getFile()}.toml"\n]`;
+  copy(copyThis.value);
 };
 </script>
 
 <template>
   <div class="py-8">
-    <ButtonsCopyButton class="absolute" @click="copyCode()"></ButtonsCopyButton>
+    <ButtonsCopy class="absolute" @click="copyCode()" />
     <pre class="w-full">
 <code class="w-full text-lg">
 <span class="head">import</span><span class="char"> = [</span>
