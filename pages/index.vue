@@ -13,10 +13,6 @@ useHead({
 const indexColorInputs = ref<InstanceType<
   typeof SectionsIndexColorInputs
 > | null>(null);
-const bgGenerator = (color: string) => {
-  const bg = bgGen(color);
-  return bg;
-};
 const resetColors = () => {
   if (indexColorInputs.value) {
     indexColorInputs.value.resetColors();
