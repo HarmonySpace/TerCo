@@ -33,7 +33,7 @@ const copyCode = (id: number) => {
         profile.name
       }}</span>
       <div class="flex justify-start items-center gap-4">
-        <ButtonsIconButton
+        <ButtonsIcon
           class="w-icon-2"
           icon="heroicons:clipboard"
           @click="copyCode(profile.id)"

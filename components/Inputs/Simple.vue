@@ -9,7 +9,7 @@ const props = defineProps({
     default: "",
   },
 });
-const placeholder = ref();
+const emits = defineEmits(["getText"]);
 const text = ref();
 watch(
   () => props.text,
@@ -20,7 +20,7 @@ watch(
 const updateValue = (value: string) => {
   text.value = value;
 };
-const emits = defineEmits(["getText"]);
+
 </script>
 
 <template>
