@@ -3,8 +3,8 @@ const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
 const copyCode = () => {
-	copyThis.value = `cd ~/alacritty-themes && touch ${store.getFile()}.toml`;
-	copy(copyThis.value);
+  copyThis.value = `cd ~/alacritty-themes && touch ${store.getFile()}.toml`;
+  copy(copyThis.value);
 };
 </script>
 
@@ -15,10 +15,7 @@ const copyCode = () => {
 <span class="head">cd</span><span class="value"> ~/alacritty-themes</span><span class="char"> && </span><span class="head">touch</span><span class="value"> {{ store.getFile() }}.toml</span>
 </code>
 </pre>
-    <ButtonsCopyButton
-      class="w-fit translate-x-4"
-      @click="copyCode()"
-    ></ButtonsCopyButton>
+    <ButtonsCopy class="w-fit translate-x-4" @click="copyCode()" />
   </div>
 </template>
 
