@@ -10,12 +10,20 @@ const profiles: Profile[] = [
     id: 1,
     name: "Alacritty",
   },
+  {
+    id: 2,
+    name: "Warp"
+  }
 ];
 const copyCode = (id: number) => {
   if (id === 1) {
     copyThis.value = alacrittyThemeGen();
-    copy(copyThis.value);
+  } else if (id === 2) {
+    copyThis.value = warphemeGen()
+  } else {
+    copyThis.value = ""
   }
+  copy(copyThis.value);
 };
 </script>
 
