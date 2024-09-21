@@ -1,0 +1,7 @@
+export default () => {
+	const store = useColorsStore();
+	const storeB = useBrightStore();
+	const theme = `accent: "#${store.colors[0].value}"\nbackground: "#${store.colors[5].value}"\nforeground: "#${store.colors[4].value}"\ndetails: darker\nterminal_colors:\n  bright:\n    black: "#${addHex(store.colors[5].value, storeB.brights[0])}"\n    blue: "#${store.colors[0].value}"\n    cyan: "#${addHex(store.colors[0].value, storeB.brights[2])}"\n    green: "#${store.colors[1].value}"\n    magenta: "#${addHex(store.colors[2].value, storeB.brights[2])}"\n    red: "#${store.colors[2].value}"\n    white: "#${restHex(store.colors[4].value, storeB.brights[1])}"\n    yellow: "#${store.colors[3].value}"\n  normal:\n    black: "#${addHex(store.colors[5].value, storeB.brights[1])}"\n    blue: "#${addHex(store.colors[0].value, storeB.brights[1])}"\n    cyan: "#${addHex(store.colors[0].value, storeB.brights[3])}"\n    green: "#${addHex(store.colors[1].value, storeB.brights[1])}"\n    magenta: "#${addHex(store.colors[2].value, storeB.brights[3])}"\n    red: "#${addHex(store.colors[2].value, storeB.brights[1])}"\n    white: "#${addHex(store.colors[4].value, storeB.brights[2])}"\n    yellow: "#${addHex(store.colors[3].value, storeB.brights[1])}"`;
+
+	return theme;
+};
