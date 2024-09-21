@@ -1,5 +1,3 @@
-import { useBrightStore } from "~/stores/Bright";
-
 export default () => {
   const store = useColorsStore();
   const storeB = useBrightStore();
