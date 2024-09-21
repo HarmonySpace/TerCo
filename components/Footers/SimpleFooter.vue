@@ -32,7 +32,7 @@
         <h2 class="text-gray-800 dark:text-gray-300 text-2xl w-full">
           Redes sociales
         </h2>
-        <ButtonsIco
+        <ButtonsIcon
           class="w-icon-1 mt-4"
           icon="tabler:brand-github"
           href="https://github.com/HarmonySpace"
