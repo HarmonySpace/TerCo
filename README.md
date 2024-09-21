@@ -20,6 +20,6 @@ Rellena los campos con la paleta que creaste y observa la preview contiguo al fo
 
 ### Aplicar el tema
 
-Cada perfil tiene su manera de ser aplicado, esta app está pensado en implementaciones con archivos independientes, sin embargo, pueden adaptarce al cualquier método.
+Cada perfil tiene su manera de ser aplicado y está pensado en implementaciones con archivos independientes, sin embargo, pueden adaptarce al cualquier método.
 
-Para implementar los perfiles puedes buscar las respectivas documentaciones de las terminales para implementarlas.
+Puedes buscar las respectivas documentaciones de las terminales para implementar los perfiles.
