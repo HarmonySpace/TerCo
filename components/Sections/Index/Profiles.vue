@@ -2,6 +2,7 @@
 interface Profile {
   id: number;
   name: string;
+  url: string;
 }
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
@@ -9,10 +10,12 @@ const profiles: Profile[] = [
   {
     id: 1,
     name: "Alacritty",
+    url: "https://alacritty.org/config-alacritty.html"
   },
   {
     id: 2,
-    name: "Warp"
+    name: "Warp",
+    url: "https://docs.warp.dev/appearance/custom-themes?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50NF3I1eEO1sgjDSWb7W04K-Hmc1G-Ax3MLYm696pIRR8Idab6MBgAaAoPlEALw_wcB"
   }
 ];
 const copyCode = (id: number) => {
@@ -41,6 +44,11 @@ const copyCode = (id: number) => {
         profile.name
       }}</span>
       <div class="flex justify-start items-center gap-4">
+        <ButtonsIcon
+          class="w-icon-2"
+          icon="material-symbols:info-outline-rounded"
+          :href="profile.url"
+        />
         <ButtonsIcon
           class="w-icon-2"
           icon="heroicons:clipboard"
