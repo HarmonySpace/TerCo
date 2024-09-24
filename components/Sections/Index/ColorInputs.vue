@@ -42,8 +42,8 @@ defineExpose({
 
 <template>
   <template v-for="color in store.colors" key="color.id">
-    <Inputs2actions v-if="color.id === 5" :placeholder="color.placeholder" icon1="mdi:dice-3" icon2="heroicons:arrow-up-16-solid" :text="inputs[color.id - 1].value" @getText="(value: string) => updateInput(color.id, value)" @action1="() => generate_foreground(color.id)" @action2="() => moreBright(color.id)" />
-    <Inputs2actions v-else-if="color.id === 6" :placeholder="color.placeholder" icon1="mdi:dice-3" icon2="heroicons:arrow-down-16-solid" :text="inputs[color.id - 1].value" @getText="(value: string) => updateInput(color.id, value)" @action1="() => generate_background(color.id)" @action2="() => moreDark(color.id)" />
+    <Inputs2actions v-if="color.id === 5" :placeholder="color.placeholder" icon1="lucide:dice-6" icon2="lucide:arrow-up" :text="inputs[color.id - 1].value" @getText="(value: string) => updateInput(color.id, value)" @action1="() => generate_foreground(color.id)" @action2="() => moreBright(color.id)" />
+    <Inputs2actions v-else-if="color.id === 6" :placeholder="color.placeholder" icon1="lucide:dice-6" icon2="lucide:arrow-down" :text="inputs[color.id - 1].value" @getText="(value: string) => updateInput(color.id, value)" @action1="() => generate_background(color.id)" @action2="() => moreDark(color.id)" />
     <div v-else>
       <InputsSimple
         :placeholder="color.placeholder"

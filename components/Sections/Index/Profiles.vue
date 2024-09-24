@@ -46,12 +46,12 @@ const copyCode = (id: number) => {
       <div class="flex justify-start items-center gap-4">
         <ButtonsIcon
           class="w-icon-2"
-          icon="material-symbols:info-outline-rounded"
+          icon="lucide:info"
           :href="profile.url"
         />
         <ButtonsIcon
           class="w-icon-2"
-          icon="heroicons:clipboard"
+          icon="lucide:copy"
           @click="copyCode(profile.id)"
         />
       </div>

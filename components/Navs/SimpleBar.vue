@@ -3,7 +3,7 @@ const anchors = [
   {
     name: "Github",
     url: "https://github.com/HarmonySpace/TerCo/tree/main",
-    icon: "mingcute:github-line",
+    icon: "lucide:github",
   },
   {
     name: "Suport me",

@@ -34,7 +34,7 @@
         </h2>
         <ButtonsIcon
           class="w-icon-1 mt-4"
-          icon="tabler:brand-github"
+          icon="lucide:github"
           href="https://github.com/HarmonySpace"
         />
       </section>

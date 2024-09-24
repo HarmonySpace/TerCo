@@ -57,9 +57,11 @@ const menuActive = ref(false);
 .w-icon-1 {
   @apply w-8 h-8;
 }
-
 .w-icon-2 {
   @apply w-6 h-6;
+}
+.w-icon-3 {
+  @apply w-10 h-10;
 }
 </style>
 

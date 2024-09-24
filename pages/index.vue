@@ -27,8 +27,8 @@ const resetColors = () => {
     >
       <SectionsIndexButtons />
       <ButtonsIcon
-        class="basis-full md:basis-1/12 w-icon-1 my-8 md:my-0 md:py-1"
-        icon="heroicons:arrow-path-16-solid"
+        class="basis-full md:basis-1/12 w-icon-3 my-8 md:my-0 md:py-1"
+        icon="lucide:refresh-ccw"
         @click="resetColors()"
       />
     </div>
