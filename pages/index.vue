@@ -4,9 +4,9 @@ useHead({
   title: "TerCo - Terminal Color",
   meta: [
     {
-      name: "A easy terminal color theme generator",
+      name: "Generación de temas de color para la terminal",
       content:
-        "Terco - Terminal color theme generator for alacritty, easy to use and apply in the latest version of alacritty",
+        "Terco - Generador de temas para terminales, rápido y fácil de usar",
     },
   ],
 });
