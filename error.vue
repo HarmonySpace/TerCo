@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const error = useError();
-console.log(error);
 </script>
 <template>
   <section
