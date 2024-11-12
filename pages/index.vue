@@ -16,13 +16,12 @@ useHead({
 const toast = ref({
   show: false,
   text: "void",
+  time: 2000,
 });
-const showToast = (text: string, time: number) => {
-  toast.value.show = true;
+const showToast = (text: string = "void", time: number = 2000) => {
+  toast.value.time = time;
   toast.value.text = text;
-  setTimeout(() => {
-    toast.value.show = false;
-  }, time);
+  toast.value.show = true;
 };
 const indexColorInputs = ref<InstanceType<
   typeof SectionsIndexColorInputs
@@ -30,6 +29,7 @@ const indexColorInputs = ref<InstanceType<
 const resetColors = () => {
   if (indexColorInputs.value) {
     indexColorInputs.value.resetColors();
+    showToast("Reset");
   }
 };
 </script>
@@ -37,16 +37,15 @@ const resetColors = () => {
 <template>
   <NuxtLayout name="simple">
     <template #toast>
-      <div v-show="toast.show" class="w-full flex justify-center items-center">
-        <h1
-          class="py-2 px-4 text-gray-500 text-xl dark:text-gray-200 bg-gray-50 rounded-lg"
-        >
-          {{ toast.text }}
-        </h1>
-      </div>
+      <ToastSimple
+        :show="toast.show"
+        :text="toast.text"
+        :time="toast.time"
+        @close="toast.show = false"
+      />
     </template>
     <template #page>
-      <button @click="showToast('hola', 2000)">Hola</button>
+      <!-- <button @click="showToast('hola')">Hola</button> -->
       <section class="pt-32 flex flex-wrap justify-between w-full">
         <div
           class="flex flex-wrap justify-start items-center gap-2 w-full h-full md:flex-nowrap"
