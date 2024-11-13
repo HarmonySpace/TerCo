@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const emits = defineEmits(["copy"]);
 interface Profile {
   id: number;
   name: string;
@@ -10,23 +11,24 @@ const profiles: Profile[] = [
   {
     id: 1,
     name: "Alacritty",
-    url: "https://alacritty.org/config-alacritty.html"
+    url: "https://alacritty.org/config-alacritty.html",
   },
   {
     id: 2,
     name: "Warp",
-    url: "https://docs.warp.dev/appearance/custom-themes?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50NF3I1eEO1sgjDSWb7W04K-Hmc1G-Ax3MLYm696pIRR8Idab6MBgAaAoPlEALw_wcB"
-  }
+    url: "https://docs.warp.dev/appearance/custom-themes?gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50NF3I1eEO1sgjDSWb7W04K-Hmc1G-Ax3MLYm696pIRR8Idab6MBgAaAoPlEALw_wcB",
+  },
 ];
 const copyCode = (id: number) => {
   if (id === 1) {
     copyThis.value = alacrittyThemeGen();
   } else if (id === 2) {
-    copyThis.value = warphemeGen()
+    copyThis.value = warphemeGen();
   } else {
-    copyThis.value = ""
+    copyThis.value = "";
   }
   copy(copyThis.value);
+  emits("copy");
 };
 </script>
 
@@ -44,11 +46,7 @@ const copyCode = (id: number) => {
         profile.name
       }}</span>
       <div class="flex justify-start items-center gap-4">
-        <ButtonsIcon
-          class="w-icon-2"
-          icon="lucide:info"
-          :href="profile.url"
-        />
+        <ButtonsIcon class="w-icon-2" icon="lucide:info" :href="profile.url" />
         <ButtonsIcon
           class="w-icon-2"
           icon="lucide:copy"
