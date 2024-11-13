@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+const emits = defineEmits(["click"]);
 const colorMode = useColorMode();
 const toggleColorMode = () => {
   colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+  emits("click");
 };
 </script>
 

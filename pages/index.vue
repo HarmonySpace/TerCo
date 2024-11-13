@@ -29,7 +29,7 @@ const indexColorInputs = ref<InstanceType<
 const resetColors = () => {
   if (indexColorInputs.value) {
     indexColorInputs.value.resetColors();
-    showToast("Reset");
+    showToast("Reseteado");
   }
 };
 </script>
@@ -66,7 +66,7 @@ const resetColors = () => {
           <section
             class="flex flex-col grow basis-full rounded-xl overflow-hidden xl:basis-1/6 h-80 xl:h-full"
           >
-            <PreviewColors />
+            <PreviewColors @copy="showToast('Copiado')" />
           </section>
           <section
             class="w-full h-fit xl:h-full flex justify-center items-center grow basis-full xl:basis-3/6"
@@ -74,7 +74,7 @@ const resetColors = () => {
             <PreviewTheme />
           </section>
         </section>
-        <SectionsIndexProfiles />
+        <SectionsIndexProfiles @copy="showToast('Copiado')" />
       </section>
     </template>
   </NuxtLayout>
