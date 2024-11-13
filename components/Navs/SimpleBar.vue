@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const emits = defineEmits(["itsActive", "colorModeItem"]);
 const anchors = [
   {
     name: "Github",
@@ -12,6 +13,9 @@ const anchors = [
   },
 ];
 const showMenu = ref(false);
+const toggleColorMode = () => {
+  emits("colorModeItem");
+};
 </script>
 
 <template>
@@ -27,7 +31,7 @@ const showMenu = ref(false);
       </div>
       <section class="flex justify-end items-center gap-4 sm:gap-8">
         <section class="flex justify-end items-center gap-12">
-          <ButtonsToggleColorMode></ButtonsToggleColorMode>
+          <ButtonsToggleColorMode @click="toggleColorMode()" />
           <ButtonsIcon
             class="hidden lg:flex w-icon-2 justify-center items-center"
             v-for="anchor in anchors"

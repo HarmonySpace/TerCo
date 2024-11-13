@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const emits = defineEmits(["copy"]);
 const store = useColorsStore();
 const copyThis = ref("");
 const { copy } = useClipboard({ source: copyThis });
@@ -9,6 +10,7 @@ const bgGenerator = (color: string) => {
 const copyColor = (color: string) => {
   copyThis.value = color;
   copy(copyThis.value);
+  emits("copy");
 };
 </script>
 
