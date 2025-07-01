@@ -1,23 +1,24 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
+  debug: true,
   modules: [
     "@pinia/nuxt",
     "@nuxtjs/color-mode",
     "nuxt-icon",
     "@vueuse/nuxt",
+    "@nuxt/devtools",
   ],
   colorMode: {
     classSuffix: "",
     preference: "light",
     fallback: "light",
   },
-  css: ['~/assets/css/main.css'],
-  compatibilityDate: "2024-09-05",
-  vite: {    
-    plugins: [      
-      tailwindcss(),    
-    ],  
+  css: ["~/assets/css/main.css"],
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
