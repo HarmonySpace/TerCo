@@ -9,22 +9,25 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "bl": "npx biome lint",
-    "bf": "npx biome format --write"
+    "bf": "npx biome format --write",
+    "ol": "oxlint"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.5.1",
-    "@vueuse/core": "^11.2.0",
+    "@pinia/nuxt": "^0.5.5",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/core": "^11.3.0",
     "@vueuse/nuxt": "^10.11.1",
-    "nuxt": "^3.10.3",
-    "pinia": "^2.1.7",
-    "postcss": "^8.4.38",
-    "vue": "^3.4.19",
-    "vue-router": "^4.3.0"
+    "nuxt": "^3.17.5",
+    "pinia": "^2.3.1",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.2",
-    "@nuxtjs/color-mode": "^3.3.3",
-    "@nuxtjs/tailwindcss": "^6.11.4",
-    "nuxt-icon": "^0.6.10"
-  }
+    "@nuxt/devtools": "2.5.0",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "nuxt-icon": "^0.6.10",
+    "oxlint": "^1.4.0"
+  },
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
 }

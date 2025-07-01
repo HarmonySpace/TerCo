@@ -3,7 +3,7 @@ const menuActive = ref(false);
 </script>
 
 <template>
-  <body
+  <main
     class="flex flex-wrap justify-center items-center w-full bg-gray-100 dark:bg-gray-950"
   >
     <section class="w-full flex flex-wrap justify-center items-center">
@@ -13,7 +13,7 @@ const menuActive = ref(false);
         </Transition>
       </div>
       <section class="w-10/12 pt-32 flex flex-wrap justify-center items-center">
-        <header class="w-full">
+        <header class="m-30 w-full">
           <NavsSimpleBar
             @itsActive="
               () => {
@@ -37,7 +37,7 @@ const menuActive = ref(false);
         </Transition>
       </section>
     </section>
-  </body>
+  </main>
   <FootersSimpleFooter />
 </template>
 
@@ -55,8 +55,6 @@ const menuActive = ref(false);
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Chivo", monospace;
   text-wrap: wrap;
