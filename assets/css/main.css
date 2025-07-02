@@ -1,52 +1,55 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     /* --- Colores --- */
-    --color-blue-50: #E6E6FF;
-    --color-blue-100: #D2D1FF;
-    --color-blue-200: #A09EFF;
-    --color-blue-300: #7371FE;
-    --color-blue-400: #413EFE;
-    --color-blue-500: #1511FE;
-    --color-blue-600: #0401D5;
-    --color-blue-700: #0301A3;
-    --color-blue-800: #02006B;
+    --color-blue-50: #e6e6ff;
+    --color-blue-100: #d2d1ff;
+    --color-blue-200: #a09eff;
+    --color-blue-300: #7371fe;
+    --color-blue-400: #413efe;
+    --color-blue-500: #1511fe;
+    --color-blue-600: #0401d5;
+    --color-blue-700: #0301a3;
+    --color-blue-800: #02006b;
     --color-blue-900: #010038;
     --color-blue-950: #010019;
-    --color-gray-50: #F1F2F3;
-    --color-gray-100: #E4E5E7;
-    --color-gray-200: #CBCDD2;
-    --color-gray-300: #AFB3BB;
-    --color-gray-400: #979CA5;
-    --color-gray-500: #7B818E;
+    --color-gray-50: #f1f2f3;
+    --color-gray-100: #e4e5e7;
+    --color-gray-200: #cbcdd2;
+    --color-gray-300: #afb3bb;
+    --color-gray-400: #979ca5;
+    --color-gray-500: #7b818e;
     --color-gray-600: #636873;
-    --color-gray-700: #4E525B;
-    --color-gray-800: #373A40;
-    --color-gray-900: #1C1E21;
-    --color-gray-950: #0E0F10;
-    --color-shark-50: #EFF2F5;
-    --color-shark-100: #E3E7ED;
-    --color-shark-200: #C4CDD9;
-    --color-shark-300: #A8B6C7;
-    --color-shark-400: #899BB3;
-    --color-shark-500: #6D84A1;
-    --color-shark-600: #566A85;
+    --color-gray-700: #4e525b;
+    --color-gray-800: #373a40;
+    --color-gray-900: #1c1e21;
+    --color-gray-950: #0e0f10;
+    --color-shark-50: #eff2f5;
+    --color-shark-100: #e3e7ed;
+    --color-shark-200: #c4cdd9;
+    --color-shark-300: #a8b6c7;
+    --color-shark-400: #899bb3;
+    --color-shark-500: #6d84a1;
+    --color-shark-600: #566a85;
     --color-shark-700: #445469;
-    --color-shark-800: #303B4A;
-    --color-shark-900: #1D242D;
-    --color-shark-950: #0E1116;
-    --color-mercury-50: #FAFAFA;
-    --color-mercury-100: #F2F2F2;
-    --color-mercury-200: #E8E8E8;
-    --color-mercury-300: #DBDBDC;
-    --color-mercury-400: #CECFCF;
-    --color-mercury-500: #C4C4C5;
-    --color-mercury-600: #B7B8B9;
-    --color-mercury-700: #888A8B;
-    --color-mercury-800: #5B5C5D;
-    --color-mercury-900: #2D2E2F;
+    --color-shark-800: #303b4a;
+    --color-shark-900: #1d242d;
+    --color-shark-950: #0e1116;
+    --color-mercury-50: #fafafa;
+    --color-mercury-100: #f2f2f2;
+    --color-mercury-200: #e8e8e8;
+    --color-mercury-300: #dbdbdc;
+    --color-mercury-400: #cecfcf;
+    --color-mercury-500: #c4c4c5;
+    --color-mercury-600: #b7b8b9;
+    --color-mercury-700: #888a8b;
+    --color-mercury-800: #5b5c5d;
+    --color-mercury-900: #2d2e2f;
     --color-mercury-950: #171717;
     /* --- Fuentes --- */
     --font-chivo: "Chivo", monospace;
-    --font-chivo-bold: "Chivo-Bold", monospace; /* Renombrado para consistencia */
+    --font-chivo-bold:
+        "Chivo-Bold", monospace; /* Renombrado para consistencia */
 }
